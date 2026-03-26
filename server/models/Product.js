@@ -18,6 +18,10 @@ const productSchema = new mongoose.Schema(
       sparse: true, // permite múltiples documentos sin sku
       trim: true,
     },
+    brand: {
+      type: String,
+      trim: true,
+    },
     description: {
       type: String,
     },
@@ -74,6 +78,10 @@ const productSchema = new mongoose.Schema(
         quantity: { type: Number, min: 1, default: 1 },
       },
     ],
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
     active: {
       type: Boolean,
       default: true,

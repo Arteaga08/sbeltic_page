@@ -65,4 +65,29 @@ const getMe = (req, res) => {
   });
 };
 
-export { login, logout, getMe };
+// @desc  Cambiar contraseña
+// @route PUT /api/auth/change-password
+// @access Private
+const changePassword = async (req, res, next) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ success: false, message: 'Faltan campos requeridos' });
+    }
+    if (newPassword.length < 8) {
+      return res.status(400).json({ success: false, message: 'La nueva contraseña debe tener al menos 8 caracteres' });
+    }
+    const user = await AdminUser.findById(req.user.id).select('+password');
+    const match = await user.comparePassword(currentPassword);
+    if (!match) {
+      return res.status(401).json({ success: false, message: 'La contraseña actual es incorrecta' });
+    }
+    user.password = newPassword;
+    await user.save();
+    res.json({ success: true, message: 'Contraseña actualizada correctamente' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export { login, logout, getMe, changePassword };

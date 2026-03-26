@@ -20,6 +20,7 @@ const packageItemSchema = z.object({
 export const createProductSchema = z.object({
   name: z.string().min(1, 'El nombre es requerido').trim(),
   sku: z.string().trim().optional(),
+  brand: z.string().trim().optional(),
   description: z.string().optional(),
   shortDescription: z.string().optional(),
   images: z.array(z.string()).optional(),

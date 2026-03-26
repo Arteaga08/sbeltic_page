@@ -12,6 +12,10 @@ export const buildQuery = (queryParams = {}, extraFilters = {}) => {
 
   const filter = { active: true, ...extraFilters };
 
+  // active queryParam: 'false' → solo inactivos, 'all' → todos, omitido → solo activos
+  if (queryParams.active === 'false') filter.active = false;
+  else if (queryParams.active === 'all') delete filter.active;
+
   if (queryParams.search) {
     filter.name = { $regex: queryParams.search, $options: 'i' };
   }

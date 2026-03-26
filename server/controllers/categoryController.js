@@ -8,7 +8,9 @@ import { buildQuery } from '../utils/apiFeatures.js';
 // @access Public
 const getCategories = async (req, res, next) => {
   try {
-    const { filter, skip, limit, page } = buildQuery(req.query);
+    const extraFilters = {};
+    if (req.query.type) extraFilters.type = req.query.type;
+    const { filter, skip, limit, page } = buildQuery(req.query, extraFilters);
     const [categories, total] = await Promise.all([
       Category.find(filter).skip(skip).limit(limit).sort({ name: 1 }),
       Category.countDocuments(filter),

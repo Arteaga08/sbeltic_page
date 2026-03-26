@@ -41,10 +41,10 @@ app.use((req, res, next) => {
   next();
 });
 
-// Rate limiting: máximo 100 requests por 15 minutos por IP
+// Rate limiting: máximo 500 requests por 15 minutos por IP
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
+  max: 500,
   message: { success: false, message: 'Demasiadas solicitudes, intenta de nuevo más tarde.' },
 });
 app.use('/api', limiter);
@@ -61,7 +61,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Archivos estáticos (imágenes subidas)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Cross-Origin-Resource-Policy: cross-origin permite que el cliente (otro puerto/dominio) cargue las imágenes
+app.use('/uploads', (_req, res, next) => {
+  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+}, express.static(path.join(__dirname, 'uploads')));
 
 // Ruta de prueba
 app.get('/', (req, res) => {

@@ -19,6 +19,11 @@ const categorySchema = new mongoose.Schema(
     image: {
       type: String, // ruta local: /uploads/categories/foto.jpg
     },
+    type: {
+      type: String,
+      enum: ['treatment', 'product'],
+      required: [true, 'El tipo es requerido'],
+    },
     active: {
       type: Boolean,
       default: true,
