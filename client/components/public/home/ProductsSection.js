@@ -15,13 +15,13 @@ function ProductCard({ product }) {
   return (
     <Link
       href={`/productos/${product.slug}`}
-      className="group flex-shrink-0 w-56 md:w-64 flex flex-col"
+      className="group shrink-0 w-56 md:w-64 flex flex-col"
       style={{ background: 'var(--pub-surface)', borderRadius: 'var(--radius-lg)' }}
     >
       {/* Imagen */}
       <div
         className="relative w-full overflow-hidden"
-        style={{ aspectRatio: '1/1', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0', background: '#f0ebe4' }}
+        style={{ aspectRatio: '1/1', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0', background: 'var(--pub-cream)' }}
       >
         {imgSrc ? (
           <Image
@@ -80,10 +80,11 @@ export default function ProductsSection({ products = [] }) {
         {/* Header */}
         <div className="text-center mb-12">
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight mb-4"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--pub-text)' }}
+            className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-4"
+            style={{ color: 'var(--pub-text)' }}
           >
-            Nuestros productos
+            <span className="font-light">Nuestros </span>
+            <span className="font-bold" style={{ color: 'var(--pub-accent)' }}>productos</span>
           </h2>
           <div className="w-16 h-0.5 mx-auto mb-4" style={{ background: 'var(--pub-gold)' }} />
           <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--pub-text-muted)' }}>
@@ -101,7 +102,7 @@ export default function ProductsSection({ products = [] }) {
               >
                 {/* Tarjeta destacada: Ver todos */}
                 <div
-                  className="flex-shrink-0 w-56 md:w-64 flex flex-col items-start justify-between p-8 snap-start"
+                  className="shrink-0 w-56 md:w-64 flex flex-col items-start justify-between p-8 snap-start"
                   style={{
                     background: 'var(--pub-accent)',
                     borderRadius: 'var(--radius-lg)',
@@ -109,21 +110,19 @@ export default function ProductsSection({ products = [] }) {
                   }}
                 >
                   <p
-                    className="text-xs font-semibold tracking-[0.25em] uppercase"
+                    className="text-xs font-semibold tracking-[0.3em] uppercase"
                     style={{ color: 'rgba(255,255,255,0.6)' }}
                   >
                     Tienda Sbeltic
                   </p>
                   <div>
                     <h3
-                      className="text-2xl font-extrabold text-white uppercase leading-tight mb-6"
-                      style={{ fontFamily: 'var(--font-heading)' }}
+                      className="text-2xl leading-tight mb-6"
+                      style={{ color: '#fff' }}
                     >
-                      Explora
+                      <span className="font-light">Explora</span>
                       <br />
-                      nuestra
-                      <br />
-                      línea
+                      <span className="font-bold">nuestra línea</span>
                     </h3>
                     <Link
                       href="/productos"
@@ -145,7 +144,7 @@ export default function ProductsSection({ products = [] }) {
               {/* Flechas de navegación — solo desktop */}
               <button
                 onClick={() => scroll(-1)}
-                className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full items-center justify-center shadow-md transition-colors hover:opacity-80"
+                className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-md transition-colors hover:opacity-80"
                 style={{ background: 'var(--pub-surface)', color: 'var(--pub-text)' }}
                 aria-label="Anterior"
               >
@@ -153,7 +152,7 @@ export default function ProductsSection({ products = [] }) {
               </button>
               <button
                 onClick={() => scroll(1)}
-                className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full items-center justify-center shadow-md transition-colors hover:opacity-80"
+                className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-md transition-colors hover:opacity-80"
                 style={{ background: 'var(--pub-surface)', color: 'var(--pub-text)' }}
                 aria-label="Siguiente"
               >

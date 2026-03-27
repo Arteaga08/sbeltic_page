@@ -11,15 +11,15 @@ export default function BestsellerSection({ product }) {
     : null
 
   return (
-    <section className="flex flex-col md:flex-row min-h-[480px]">
+    <section className="flex flex-col md:flex-row min-h-120">
       {/* Panel izquierdo — producto */}
       <div
         className="flex-1 flex flex-col items-center justify-center px-10 py-16 md:px-16 md:py-20 gap-8"
         style={{ background: 'var(--pub-gold-light)' }}
       >
         <p
-          className="text-[10px] font-semibold tracking-[0.35em] uppercase self-start"
-          style={{ color: 'var(--pub-gold)' }}
+          className="text-xs font-semibold tracking-[0.3em] uppercase self-start"
+          style={{ color: 'var(--pub-gold-dark)' }}
         >
           Producto estrella
         </p>
@@ -32,7 +32,7 @@ export default function BestsellerSection({ product }) {
           {/* Imagen */}
           <div
             className="relative w-full"
-            style={{ aspectRatio: '1/1', background: '#f0ebe4' }}
+            style={{ aspectRatio: '1/1', background: 'var(--pub-cream)' }}
           >
             {imgSrc ? (
               <Image
@@ -74,7 +74,7 @@ export default function BestsellerSection({ product }) {
 
         <Link
           href={`/productos/${product.slug}`}
-          className="w-full max-w-xs text-center py-3.5 rounded-full text-sm font-bold tracking-widest uppercase transition-opacity hover:opacity-85"
+          className="w-full max-w-xs text-center py-3.5 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:bg-(--pub-accent-hover) hover:shadow-xl hover:-translate-y-1"
           style={{ background: 'var(--pub-accent)', color: '#fff' }}
         >
           Ver producto
@@ -83,8 +83,8 @@ export default function BestsellerSection({ product }) {
 
       {/* Panel derecho — imagen lifestyle */}
       <div
-        className="flex-1 relative min-h-[320px] md:min-h-[480px]"
-        style={{ background: '#1a1a1a' }}
+        className="flex-1 relative min-h-80 md:min-h-120"
+        style={{ background: 'var(--pub-text)' }}
       >
         <Image
           src="/images/bestseller-lifestyle.jpg"
@@ -102,12 +102,11 @@ export default function BestsellerSection({ product }) {
               'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)',
           }}
         >
-          <p
+          <h2
             className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-3"
-            style={{ fontFamily: 'var(--font-heading)' }}
           >
             {product.shortDescription || product.name}
-          </p>
+          </h2>
           {product.shortDescription && (
             <p className="text-sm leading-relaxed max-w-sm" style={{ color: 'rgba(255,255,255,0.75)' }}>
               {product.description?.slice(0, 120)}

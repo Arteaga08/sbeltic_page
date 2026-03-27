@@ -1,46 +1,161 @@
-import Link from 'next/link'
-import Image from 'next/image'
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 
 export default function DividerBanner({
-  imageSrc = '/images/divider-banner.jpg',
-  buttonText = 'Agenda tu Consulta',
-  buttonHref = '/contacto',
+  imageSrc = "https://res.cloudinary.com/dnppruwh4/image/upload/v1774578089/Captura_de_pantalla_2026-03-26_a_la_s_8.20.24_p.m._xxhxag.png",
+  imageAlt = "Programa Primera Visita",
+  label = "PROGRAMA PRIMERA VISITA",
+  headingLight = "",
+  headingBold = "10%",
+  subheading = "Primera Visita",
+  description = "Obten un Cupon del 10% de descuento al visitarnos por primera vez",
+  buttonText = "Agendar",
+  buttonHref = "/contacto",
+  marqueeText = "Cuidado Experto Para Tu Piel",
 }) {
   return (
-    <section
-      className="relative flex items-center justify-center h-64 md:h-80 overflow-hidden"
-    >
-      {/* Imagen de fondo */}
-      <Image
-        src={imageSrc}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="100vw"
-        priority={false}
-      />
-
-      {/* Overlay oscuro */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'rgba(0,0,0,0.48)' }}
-      />
-
-      {/* CTA centrado */}
-      <div className="relative z-10 flex flex-col items-center gap-6 text-center px-6">
-        <p
-          className="text-xs font-semibold tracking-[0.3em] uppercase"
-          style={{ color: 'rgba(255,255,255,0.7)' }}
-        >
-          Resultados reales, cuidado profesional
-        </p>
-        <Link
-          href={buttonHref}
-          className="px-10 py-4 rounded-full text-sm font-bold tracking-widest uppercase border-2 border-white text-white transition-colors hover:bg-white hover:text-black"
-        >
-          {buttonText}
-        </Link>
+    <>
+      {/* Marquee separador — header */}
+      <div className="w-full border-y border-black/10 overflow-hidden py-5 md:py-6 bg-white">
+        <div className="flex w-max animate-[marquee_25s_linear_infinite]">
+          {[...Array(2)].map((_, i) => (
+            <div
+              key={i}
+              className="flex whitespace-nowrap items-center"
+            >
+              {[...Array(6)].map((_, j) => (
+                <span
+                  key={j}
+                  className="text-lg md:text-xl italic font-light px-8 md:px-12"
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    color: "var(--pub-text)",
+                  }}
+                >
+                  {marqueeText}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
-  )
+
+      {/* Banner de dos paneles */}
+      <section
+        className="relative flex flex-col-reverse md:flex-row w-full overflow-hidden"
+        style={{
+          minHeight: "clamp(500px, 58vh, 640px)",
+          background: "var(--pub-surface)",
+        }}
+      >
+        {/* Línea vertical de acento — borde derecho de toda la sección */}
+        <div
+          className="hidden md:block absolute right-0 top-0 bottom-0 w-2"
+          style={{ background: "var(--pub-accent)" }}
+        />
+        {/* Panel izquierdo — Imagen que toca borde superior e inferior */}
+        <div
+          className="flex-none w-full md:w-1/2 min-h-80 md:min-h-0 relative"
+          style={{ background: "var(--pub-surface)" }}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            unoptimized
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={false}
+          />
+        </div>
+
+        {/* Panel derecho — texto centrado */}
+        <div className="flex-1 md:flex-none md:w-1/2 flex flex-col justify-center items-center text-center px-8 pt-12 pb-8 md:py-14 md:px-12 lg:px-20">
+          {/* Label eyebrow */}
+          <p
+            className="text-xs font-semibold tracking-[0.3em] uppercase mb-3"
+            style={{ color: "var(--pub-gold-dark)" }}
+          >
+            {label}
+          </p>
+
+          {/* Línea decorativa bajo el label */}
+          <span
+            className="block mb-6"
+            style={{ width: 200, height: 1, background: "var(--pub-gold)" }}
+          />
+
+          {/* Grupo de encabezados (Serif + Script) */}
+          <div className="flex flex-col items-center">
+            {headingLight && (
+              <span
+                className="text-2xl md:text-3xl font-light leading-tight"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--pub-text)",
+                }}
+              >
+                {headingLight}
+              </span>
+            )}
+
+            {headingBold && (
+              <span
+                className="text-7xl md:text-8xl lg:text-[9rem] font-normal uppercase leading-none tracking-tight"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--pub-text)",
+                }}
+              >
+                {headingBold}
+              </span>
+            )}
+
+            {subheading && (
+              <span
+                className="text-4xl md:text-5xl mt-2 md:mt-3"
+                style={{
+                  fontFamily: "var(--font-script, cursive)",
+                  color: "var(--pub-text)",
+                }}
+              >
+                {subheading}
+              </span>
+            )}
+          </div>
+
+          {/* Divider gold bajo los headings */}
+          <div
+            style={{
+              width: 56,
+              height: 2,
+              background: "var(--pub-gold)",
+              marginTop: 16,
+              marginBottom: 20,
+            }}
+          />
+
+          {/* Descripción antes del botón */}
+          {description && (
+            <p
+              className="text-sm md:text-base leading-relaxed max-w-xs mb-8"
+              style={{ color: "var(--pub-text-muted)" }}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
+
+          {/* Botón CTA */}
+          <Link
+            href={buttonHref}
+            className="px-12 py-4 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-(--pub-accent-hover) hover:shadow-xl hover:-translate-y-1"
+            style={{ background: "var(--pub-accent)", color: "#ffffff" }}
+          >
+            {buttonText}
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }

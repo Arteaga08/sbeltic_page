@@ -19,8 +19,8 @@ function PostCard({ post, offset }) {
 
   return (
     <div
-      className={`relative w-52 md:w-60 aspect-[9/16] flex-shrink-0 overflow-hidden shadow-lg transition-transform duration-300 ${rotation}`}
-      style={{ borderRadius: 'var(--radius-lg)', background: '#e8e3dc' }}
+      className={`relative w-52 md:w-60 aspect-9/16 shrink-0 overflow-hidden shadow-lg transition-transform duration-300 ${rotation}`}
+      style={{ borderRadius: 'var(--radius-lg)', background: 'var(--pub-warm-card)' }}
     >
       <Image
         src={post.src}
@@ -59,7 +59,7 @@ export default function SocialSection() {
   return (
     <section
       className="py-20 md:py-28 overflow-hidden"
-      style={{ background: 'var(--pub-bg)' }}
+      style={{ background: 'var(--pub-surface)' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center gap-16 md:gap-20">
         {/* Izquierda — carrusel de posts */}
@@ -75,7 +75,7 @@ export default function SocialSection() {
             <button
               onClick={prev}
               disabled={index === 0}
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors disabled:opacity-30"
+              className="w-11 h-11 rounded-full border flex items-center justify-center transition-colors disabled:opacity-30"
               style={{ borderColor: 'var(--pub-border)', color: 'var(--pub-text)' }}
               aria-label="Anterior"
             >
@@ -84,7 +84,7 @@ export default function SocialSection() {
             <button
               onClick={next}
               disabled={index === POSTS.length - 1}
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors disabled:opacity-30"
+              className="w-11 h-11 rounded-full border flex items-center justify-center transition-colors disabled:opacity-30"
               style={{ borderColor: 'var(--pub-border)', color: 'var(--pub-text)' }}
               aria-label="Siguiente"
             >
@@ -96,19 +96,14 @@ export default function SocialSection() {
         {/* Derecha — texto */}
         <div className="flex-1 flex flex-col gap-7 text-center md:text-left">
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05]"
-            style={{ fontFamily: 'var(--font-heading)', color: 'var(--pub-text)' }}
+            className="text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
+            style={{ color: 'var(--pub-text)' }}
           >
-            Resultados
+            <span className="font-light">Resultados</span>
             <br />
-            <em
-              className="not-italic"
-              style={{ color: 'var(--pub-accent)' }}
-            >
-              reales
-            </em>
+            <span className="font-bold" style={{ color: 'var(--pub-accent)' }}>reales</span>
             <br />
-            sin filtros
+            <span className="font-light">sin filtros</span>
           </h2>
           <p className="text-base leading-relaxed" style={{ color: 'var(--pub-text-muted)' }}>
             Descubre lo que nuestros clientes comparten sobre sus tratamientos y rutinas de skincare con Sbeltic.
@@ -117,8 +112,8 @@ export default function SocialSection() {
             href="https://instagram.com/sbeltic"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center md:justify-start gap-2 px-8 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-85"
-            style={{ background: 'var(--pub-text)', color: '#fff', borderRadius: 'var(--radius-sm)' }}
+            className="inline-flex items-center justify-center md:justify-start gap-2 px-8 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase transition-opacity hover:opacity-85"
+            style={{ background: 'var(--pub-text)', color: '#fff' }}
           >
             <InstagramLogo size={18} weight="fill" />
             Síguenos en Instagram

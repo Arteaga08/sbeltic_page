@@ -1,80 +1,85 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
+import Link from "next/link";
+import Image from "next/image";
 
-export default function ClinicSection() {
+export default function ClinicSection({ videoSrc }) {
   return (
-    <section className="flex flex-col md:flex-row min-h-[520px]">
-      {/* Panel izquierdo — texto */}
+    <section className="flex flex-col md:flex-row min-h-[90svh] lg:min-h-[90svh] w-full border border-black/40">
+      {/* Panel izquierdo — texto sobre la clínica */}
       <div
-        className="flex-1 flex flex-col justify-between px-10 py-16 md:px-16 md:py-20"
-        style={{ background: 'var(--pub-accent)' }}
+        className="flex-none w-full md:w-1/2 min-h-72 md:min-h-0 relative flex flex-col justify-start md:justify-center px-6 pt-8 pb-8 md:py-16 md:px-16 lg:px-24 overflow-hidden border-b md:border-b-0 md:border-r border-black/40"
+        style={{ background: "var(--pub-accent)" }}
       >
-        <div className="flex flex-col gap-6 max-w-sm">
+        {/* Arco decorativo — esquina superior derecha */}
+       
+
+        <div className="relative z-10 flex flex-col gap-3 md:gap-6 max-w-md items-center md:items-start text-center md:text-left">
           <p
             className="text-xs font-semibold tracking-[0.3em] uppercase"
-            style={{ color: 'rgba(255,255,255,0.6)' }}
+            style={{ color: "rgba(255,255,255,0.6)" }}
           >
-            Nuestra clínica
+            Clínica estética
           </p>
 
           <h2
-            className="text-4xl md:text-5xl font-extrabold uppercase leading-[1.1] text-white"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            className="text-3xl md:text-5xl lg:text-7xl leading-tight text-white"
           >
-            Profesionales
+            <span className="font-light">Un espacio </span>
             <br />
-            certificados
+            <span className="font-bold">diseñado para ti</span>
+            <br />
           </h2>
 
-          <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.78)' }}>
-            Cada tratamiento es aplicado por especialistas con formación médica y
-            estética, usando tecnología de vanguardia para resultados seguros y
-            duraderos.
-          </p>
-        </div>
+          <div className="w-50 h-px bg-white/30" />
 
-        <Link
-          href="/nosotros"
-          className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-opacity hover:opacity-70 mt-10 w-fit"
-          style={{ color: '#fff' }}
-        >
-          Conoce a nuestro equipo
-          <ArrowRight size={16} weight="bold" />
-        </Link>
-      </div>
-
-      {/* Panel derecho — imagen */}
-      <div
-        className="flex-1 relative min-h-[320px] md:min-h-[520px]"
-        style={{ background: 'var(--pub-accent-light)' }}
-      >
-        <Image
-          src="/images/clinic-interior.jpg"
-          alt="Interior de la clínica Sbeltic"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          // placeholder="blur" — agregar cuando haya imagen real
-        />
-
-        {/* Overlay de texto sobre la imagen */}
-        <div
-          className="absolute inset-0 flex flex-col justify-end p-10"
-          style={{
-            background:
-              'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)',
-          }}
-        >
-          <Link
-            href="/contacto"
-            className="flex items-center gap-2 text-sm font-bold tracking-widest uppercase w-fit text-white transition-opacity hover:opacity-70"
+          <p
+            className="text-sm md:text-lg leading-relaxed font-light max-w-sm"
+            style={{ color: "rgba(255,255,255,0.85)" }}
           >
-            Agenda tu visita
-            <ArrowRight size={16} weight="bold" />
+            <span className="md:hidden">
+              Un espacio pensado para tu bienestar.
+            </span>
+            <span className="hidden md:inline">
+              Cada detalle de nuestra clínica fue pensado para brindarte una
+              experiencia de bienestar única, en un ambiente profesional y
+              acogedor.
+            </span>
+          </p>
+
+          <Link
+            href="/nosotros"
+            className="mt-2 w-full md:w-fit text-center px-8 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white text-white transition-all duration-300 hover:bg-white hover:text-(--pub-accent) hover:shadow-xl hover:-translate-y-1"
+          >
+            Conoce nuestra clínica
           </Link>
         </div>
       </div>
+
+      {/* Panel derecho — imagen o video */}
+      <div className="flex-1 w-full md:flex-none md:w-1/2 relative overflow-hidden">
+        {videoSrc ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src="https://res.cloudinary.com/demo/image/upload/v1/family_bench.jpg"
+            alt="Interior de la clínica Sbeltic"
+            fill
+            unoptimized
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        )}
+
+        {/* Gradiente sutil para profundidad */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+      </div>
     </section>
-  )
+  );
 }
