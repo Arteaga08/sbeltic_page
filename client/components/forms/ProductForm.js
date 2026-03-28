@@ -237,7 +237,8 @@ export default function ProductForm({ initial, onSuccess }) {
 
         {/* Imágenes */}
         <Card>
-          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-5">Imágenes</h2>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">Imágenes</h2>
+          <p className="text-xs text-text-muted mb-4">La primera imagen será la portada del producto</p>
           <ImageUploader entity="products" multiple {...arr('images')} />
         </Card>
 
@@ -287,12 +288,14 @@ export default function ProductForm({ initial, onSuccess }) {
         </div>
       </form>
 
-      <QuickCategoryModal
-        open={showNewCat}
-        onClose={() => setShowNewCat(false)}
-        onCreated={handleCategoryCreated}
-        type="product"
-      />
+      {showNewCat && (
+        <QuickCategoryModal
+          open
+          onClose={() => setShowNewCat(false)}
+          onCreated={handleCategoryCreated}
+          type="product"
+        />
+      )}
     </>
   )
 }

@@ -21,7 +21,7 @@ export default function CategoriasTratamientosPage() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
-  const [drawer, setDrawer] = useState({ open: false, item: null })
+  const [drawer, setDrawer] = useState({ open: false, item: null, key: 0 })
   const { confirm, ConfirmModal } = useConfirm()
   const { addToast } = useToast()
 
@@ -36,9 +36,9 @@ export default function CategoriasTratamientosPage() {
 
   useEffect(() => { load() }, [])
 
-  function openNew() { setDrawer({ open: true, item: null }) }
-  function openEdit(item) { setDrawer({ open: true, item }) }
-  function closeDrawer() { setDrawer({ open: false, item: null }) }
+  function openNew() { setDrawer((prev) => ({ open: true, item: null, key: prev.key + 1 })) }
+  function openEdit(item) { setDrawer((prev) => ({ open: true, item, key: prev.key + 1 })) }
+  function closeDrawer() { setDrawer((prev) => ({ ...prev, open: false, item: null })) }
 
   function handleSuccess() {
     addToast(drawer.item ? 'Categoría actualizada' : 'Categoría creada')
@@ -105,10 +105,11 @@ export default function CategoriasTratamientosPage() {
         title={drawer.item ? 'Editar categoría' : 'Nueva categoría — Tratamientos'}
       >
         <CategoryForm
-          key={drawer.item?._id ?? 'new-treatment'}
+          key={drawer.key}
           initial={drawer.item}
           lockedType="treatment"
           onSuccess={handleSuccess}
+          onCancel={closeDrawer}
         />
       </Drawer>
     </div>

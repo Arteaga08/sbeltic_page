@@ -4,6 +4,7 @@ import ClinicSection from '@/components/public/home/ClinicSection'
 import DividerBanner from '@/components/public/home/DividerBanner'
 import ProductsSection from '@/components/public/home/ProductsSection'
 import BestsellerSection from '@/components/public/home/BestsellerSection'
+import PackagesSection from '@/components/public/home/PackagesSection'
 import SocialSection from '@/components/public/home/SocialSection'
 import { publicCategories, publicProducts } from '@/lib/api-public'
 
@@ -31,6 +32,7 @@ export default async function HomePage() {
       <DividerBanner />
       <ProductsSection products={products} />
       {bestseller && <BestsellerSection product={bestseller} />}
+      <PackagesSection />
       <SocialSection />
     </>
   )

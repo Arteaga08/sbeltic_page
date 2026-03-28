@@ -21,7 +21,7 @@ const INITIAL = { name: '', type: '', description: '', image: '', active: true }
 
 const TYPE_LABELS = { treatment: 'Tratamientos', product: 'Productos' }
 
-export default function CategoryForm({ initial, onSuccess, lockedType }) {
+export default function CategoryForm({ initial, onSuccess, onCancel, lockedType }) {
   const [form, setForm] = useState(
     initial ?? (lockedType ? { ...INITIAL, type: lockedType } : INITIAL)
   )
@@ -114,7 +114,7 @@ export default function CategoryForm({ initial, onSuccess, lockedType }) {
         )}
 
         <div className="flex justify-end gap-3 pt-2">
-          <Button type="button" variant="secondary" onClick={() => onSuccess ? onSuccess(null) : router.back()}>
+          <Button type="button" variant="secondary" onClick={() => onCancel ? onCancel() : router.back()}>
             Cancelar
           </Button>
           <Button type="submit" variant="primary" loading={saving}>

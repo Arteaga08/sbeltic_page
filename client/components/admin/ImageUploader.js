@@ -57,7 +57,7 @@ export default function ImageUploader({ entity, value, onChange, multiple = fals
       {/* Previews */}
       {allPreviews.length > 0 && (
         <div className="flex flex-wrap gap-3">
-          {allPreviews.map(({ src, key, uploading, onRemove }) => (
+          {allPreviews.map(({ src, key, uploading, onRemove }, index) => (
             <div key={key} className="relative group">
               <div className="relative h-24 w-24 rounded-md overflow-hidden border border-border bg-bg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -66,6 +66,11 @@ export default function ImageUploader({ entity, value, onChange, multiple = fals
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                     <span className="text-white text-xs">Subiendo…</span>
                   </div>
+                )}
+                {multiple && index === 0 && !uploading && (
+                  <span className="absolute bottom-1 left-1 bg-primary text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full leading-none">
+                    Principal
+                  </span>
                 )}
               </div>
               {onRemove && (

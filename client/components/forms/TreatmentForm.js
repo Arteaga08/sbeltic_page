@@ -252,12 +252,14 @@ export default function TreatmentForm({ initial, onSuccess }) {
         </div>
       </form>
 
-      <QuickCategoryModal
-        open={showNewCat}
-        onClose={() => setShowNewCat(false)}
-        onCreated={handleCategoryCreated}
-        type="treatment"
-      />
+      {showNewCat && (
+        <QuickCategoryModal
+          open
+          onClose={() => setShowNewCat(false)}
+          onCreated={handleCategoryCreated}
+          type="treatment"
+        />
+      )}
     </>
   )
 }
