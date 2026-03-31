@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { CheckCircleIcon } from '@phosphor-icons/react/dist/ssr'
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
@@ -20,7 +21,7 @@ export default function BestsellerSection({ product }) {
     <section className="flex flex-col-reverse md:flex-row md:min-h-64">
       {/* Panel izquierdo — producto */}
       <div
-        className="flex-1 flex flex-col items-center justify-center px-6 py-6 md:px-12 md:py-8 gap-3"
+        className="flex-1 flex flex-col items-center justify-center px-6 py-4 md:px-12 md:py-8 gap-2 md:gap-3"
         style={{ background: 'linear-gradient(135deg, var(--pub-bg) 0%, var(--pub-accent-light) 100%)' }}
       >
         {/* Título estilizado */}
@@ -134,7 +135,7 @@ export default function BestsellerSection({ product }) {
           <ul className="w-full max-w-xs flex flex-col gap-1.5 text-xs" style={{ color: 'var(--pub-text-muted)' }}>
             {product.benefits.slice(0, 3).map((b, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span style={{ color: 'var(--pub-accent)' }}>✦</span>
+                <CheckCircleIcon size={14} weight="fill" style={{ color: 'var(--pub-accent)', flexShrink: 0, marginTop: 1 }} />
                 <span>{b}</span>
               </li>
             ))}
@@ -143,7 +144,7 @@ export default function BestsellerSection({ product }) {
 
         <Link
           href={`/productos/${product.slug}`}
-          className="w-full max-w-xs text-center py-3 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+          className="w-full max-w-xs text-center py-3.5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
           style={{ background: 'var(--pub-accent)', color: '#fff' }}
         >
           Ver producto
@@ -152,7 +153,7 @@ export default function BestsellerSection({ product }) {
 
       {/* Panel derecho — imagen lifestyle (arriba en móvil) */}
       <div
-        className="shrink-0 relative h-64 md:h-auto md:flex-1 md:min-h-64"
+        className="shrink-0 relative h-48 md:h-auto md:flex-1 md:min-h-64"
         style={{ background: 'var(--pub-text)' }}
       >
         <Image
