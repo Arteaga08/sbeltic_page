@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import SectionEyebrow from "./shared/SectionEyebrow";
+import SectionHeading from "./shared/SectionHeading";
 
 export default function ClinicSection({ videoSrc }) {
   return (
@@ -13,21 +15,18 @@ export default function ClinicSection({ videoSrc }) {
        
 
         <div className="relative z-10 flex flex-col gap-3 md:gap-6 max-w-md items-center md:items-start text-center md:text-left">
-          <p
-            className="text-xs font-semibold tracking-[0.3em] uppercase"
-            style={{ color: "rgba(255,255,255,0.6)" }}
-          >
+          <SectionEyebrow variant="light">
             Clínica estética
-          </p>
+          </SectionEyebrow>
 
-          <h2
-            className="text-3xl md:text-5xl lg:text-7xl leading-tight text-white"
-          >
-            <span className="font-light">Un espacio </span>
-            <br />
-            <span className="font-bold">diseñado para ti</span>
-            <br />
-          </h2>
+          <SectionHeading
+            lightText="Un espacio"
+            boldText="diseñado para ti"
+            sizeClasses="text-3xl md:text-5xl lg:text-7xl"
+            textColor="white"
+            boldColor="white"
+            break
+          />
 
           <div className="w-50 h-px bg-white/30" />
 

@@ -223,7 +223,7 @@ export default function Footer() {
               reservados.
             </p>
             <div className="flex items-center justify-center gap-1.5 text-[#9e9a94]">
-              <span>Diseñado por</span>
+              <span>Desarrollado por</span>
               <a
                 href="https://vidix.studio"
                 target="_blank"

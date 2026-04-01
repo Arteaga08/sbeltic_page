@@ -4,6 +4,8 @@ import { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
+import SectionHeading from './shared/SectionHeading'
+import GoldDivider from './shared/GoldDivider'
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
@@ -126,15 +128,13 @@ export default function ProductsSection({ products = [] }) {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-4"
-            style={{ color: 'var(--pub-text)' }}
-          >
-            <span className="font-light">Nuestros</span>
-            <br className="md:hidden" />
-            <span className="font-bold" style={{ color: 'var(--pub-accent)' }}> Productos</span>
-          </h2>
-          <div className="w-70 h-0.5 mx-auto mb-4" style={{ background: 'var(--pub-gold)' }} />
+          <SectionHeading
+            lightText="Nuestros"
+            boldText="Productos"
+            sizeClasses="text-4xl md:text-5xl lg:text-6xl"
+            className="mb-4"
+          />
+          <GoldDivider size="lg" className="mb-4" />
           <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: 'var(--pub-text-muted)' }}>
             Los productos más exclusivos de skincare, seleccionados por nuestros especialistas para llevar los resultados de la clínica a tu hogar.
           </p>

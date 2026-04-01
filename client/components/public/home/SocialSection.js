@@ -8,6 +8,7 @@ import {
   ArrowRightIcon,
   InstagramLogoIcon,
 } from "@phosphor-icons/react";
+import SectionEyebrow from "./shared/SectionEyebrow";
 
 const IG_GRADIENT =
   "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)";
@@ -242,12 +243,7 @@ export default function SocialSection({ posts = [] }) {
           }`}
         >
           {/* Eyebrow */}
-          <p
-            className="text-xs font-bold tracking-[0.3em] uppercase"
-            style={{ color: "var(--pub-gold-dark)" }}
-          >
-            Nuestra comunidad
-          </p>
+          <SectionEyebrow>Nuestra comunidad</SectionEyebrow>
 
           {/* Headline */}
           <h2
@@ -260,7 +256,7 @@ export default function SocialSection({ posts = [] }) {
             <span className="font-light">Resultados</span>
             <br />
             <em
-              className="not-italic font-medium"
+              className="not-italic font-bold"
               style={{ color: "var(--pub-accent)" }}
             >
               reales,

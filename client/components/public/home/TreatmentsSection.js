@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import SectionEyebrow from "./shared/SectionEyebrow";
+import SectionHeading from "./shared/SectionHeading";
+import GoldDivider from "./shared/GoldDivider";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
@@ -59,28 +62,16 @@ export default function TreatmentsSection({ categories = [] }) {
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full grow">
         {/* Header */}
         <div className="text-center mb-10 md:mb-14">
-          <p
-            className="text-xs font-semibold tracking-[0.3em] uppercase mb-5"
-            style={{ color: "var(--pub-gold-dark)" }}
-          >
-            Rostro &amp; Cuerpo
-          </p>
+          <SectionEyebrow className="mb-5">Rostro &amp; Cuerpo</SectionEyebrow>
 
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
-            style={{ color: "var(--pub-text)" }}
-          >
-            <span className="font-light">Nuestros </span>
-            <span className="font-bold" style={{ color: "var(--pub-accent)" }}>
-              Tratamientos
-            </span>
-          </h2>
-
-          {/* Subrayado */}
-          <div
-            className="w-3/4 max-w-70 md:max-w-100 h-0.5 mx-auto"
-            style={{ background: "var(--pub-gold)" }}
+          <SectionHeading
+            lightText="Nuestros"
+            boldText="Tratamientos"
+            sizeClasses="text-4xl md:text-5xl lg:text-6xl"
+            className="mb-6"
           />
+
+          <GoldDivider size="lg" />
         </div>
 
         {/* Tarjetas */}

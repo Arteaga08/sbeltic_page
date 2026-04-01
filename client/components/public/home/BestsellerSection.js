@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { CheckCircleIcon } from '@phosphor-icons/react/dist/ssr'
+import SectionEyebrow from './shared/SectionEyebrow'
+import SectionHeading from './shared/SectionHeading'
+import GoldDivider from './shared/GoldDivider'
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000'
 
@@ -26,21 +29,16 @@ export default function BestsellerSection({ product }) {
       >
         {/* Título estilizado */}
         <div className="w-full max-w-xs flex flex-col gap-2">
-          <p
-            className="text-[10px] md:text-xs font-semibold tracking-[0.25em] uppercase"
-            style={{ color: 'var(--pub-gold)' }}
-          >
+          <SectionEyebrow variant="gold">
             Selección del especialista
-          </p>
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl leading-tight"
-            style={{ color: 'var(--pub-text)', fontFamily: 'var(--font-heading)' }}
-          >
-            <span className="font-light">Nuestro</span>
-            <br />
-            <span className="font-bold" style={{ color: 'var(--pub-accent)' }}>Bestseller</span>
-          </h2>
-          <div className="w-12 h-0.5" style={{ background: 'var(--pub-gold)' }} />
+          </SectionEyebrow>
+          <SectionHeading
+            lightText="Nuestro"
+            boldText="Bestseller"
+            sizeClasses="text-3xl md:text-4xl lg:text-5xl"
+            break
+          />
+          <GoldDivider size="sm" centered={false} />
           <p className="text-xs md:text-sm leading-relaxed" style={{ color: 'var(--pub-text-muted)' }}>
             Recomendado por nuestros expertos en cuidado de la piel
           </p>
@@ -180,7 +178,7 @@ export default function BestsellerSection({ product }) {
             Destacado
           </p>
           <h2
-            className="text-xl md:text-2xl lg:text-3xl font-extrabold text-white leading-snug"
+            className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-snug"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             {product.shortDescription || product.name}

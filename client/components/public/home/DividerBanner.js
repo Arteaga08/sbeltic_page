@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import SectionEyebrow from "./shared/SectionEyebrow";
+import GoldDivider from "./shared/GoldDivider";
 
 export default function DividerBanner({
   imageSrc = "https://res.cloudinary.com/dnppruwh4/image/upload/v1774578089/Captura_de_pantalla_2026-03-26_a_la_s_8.20.24_p.m._xxhxag.png",
@@ -74,18 +76,10 @@ export default function DividerBanner({
         {/* Panel derecho — texto centrado */}
         <div className="flex-1 md:flex-none md:w-1/2 flex flex-col justify-center items-center text-center px-8 pt-12 pb-8 md:py-14 md:px-12 lg:px-20">
           {/* Label eyebrow */}
-          <p
-            className="text-xs font-semibold tracking-[0.3em] uppercase mb-3"
-            style={{ color: "var(--pub-gold-dark)" }}
-          >
-            {label}
-          </p>
+          <SectionEyebrow className="mb-3">{label}</SectionEyebrow>
 
           {/* Línea decorativa bajo el label */}
-          <span
-            className="block mb-6"
-            style={{ width: 200, height: 1, background: "var(--pub-gold)" }}
-          />
+          <GoldDivider size="lg" className="mb-6" />
 
           {/* Grupo de encabezados (Serif + Script) */}
           <div className="flex flex-col items-center">
@@ -127,15 +121,7 @@ export default function DividerBanner({
           </div>
 
           {/* Divider gold bajo los headings */}
-          <div
-            style={{
-              width: 56,
-              height: 2,
-              background: "var(--pub-gold)",
-              marginTop: 16,
-              marginBottom: 20,
-            }}
-          />
+          <GoldDivider size="md" className="mt-4 mb-5" />
 
           {/* Descripción antes del botón */}
           {description && (

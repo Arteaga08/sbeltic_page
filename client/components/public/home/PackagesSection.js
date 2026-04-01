@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
+import SectionEyebrow from './shared/SectionEyebrow'
+import SectionHeading from './shared/SectionHeading'
+import GoldDivider from './shared/GoldDivider'
 
 export default function PackagesSection() {
   return (
@@ -27,21 +30,20 @@ export default function PackagesSection() {
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full py-16 md:py-20">
         <div className="max-w-lg">
-          <p
-            className="text-[10px] font-semibold tracking-[0.3em] uppercase mb-4"
-            style={{ color: 'var(--pub-accent)' }}
-          >
+          <SectionEyebrow variant="accent" className="mb-4">
             Paquetes exclusivos
-          </p>
+          </SectionEyebrow>
 
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            <span className="font-light text-white">Rutinas</span>
-            <br />
-            <span className="font-bold" style={{ color: 'var(--pub-accent)' }}>Sbeltic</span>
-          </h2>
+          <SectionHeading
+            lightText="Rutinas"
+            boldText="Sbeltic"
+            sizeClasses="text-3xl md:text-4xl lg:text-5xl"
+            textColor="white"
+            className="mb-2"
+            break
+          />
+
+          <GoldDivider size="sm" centered={false} className="mb-4" />
 
           <p className="text-sm md:text-base leading-relaxed max-w-md mb-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
             Paquetes curados por nuestros especialistas para potenciar tus resultados con una rutina completa de skincare.

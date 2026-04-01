@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SectionEyebrow from "./shared/SectionEyebrow";
 
 export default function Hero() {
   return (
@@ -27,12 +28,9 @@ export default function Hero() {
 
       {/* Contenido */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 pb-16 pt-24 md:pt-36">
-        <p
-          className="text-xs font-semibold tracking-[0.3em] uppercase mb-5"
-          style={{ color: "rgba(255,255,255,0.75)" }}
-        >
+        <SectionEyebrow variant="light" className="mb-5">
           Clínica Estética Profesional
-        </p>
+        </SectionEyebrow>
 
         <h1
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] text-white mb-6 max-w-4xl"
