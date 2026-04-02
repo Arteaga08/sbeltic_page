@@ -44,6 +44,9 @@ const treatmentSchema = new mongoose.Schema(
     resultsIn: {
       type: String, // ej: "Desde la primera sesión"
     },
+    benefitsText: {
+      type: String, // Párrafo introductorio de la sección de beneficios
+    },
     benefits: [String],
     howItWorks: {
       type: String,
@@ -57,6 +60,31 @@ const treatmentSchema = new mongoose.Schema(
     contraindications: [String],
     targetAreas: [String],
     skinTypes: [String],
+    // — Nuevas secciones de detalle —
+    whySbeltic: {
+      type: String, // Sección: ¿Por qué en Sbeltic?
+    },
+    aboutTreatment: {
+      type: String, // Sección: De qué trata el tratamiento
+    },
+    aboutTreatmentImage: {
+      type: String, // Imagen junto al texto de aboutTreatment
+    },
+    procedureSteps: [String], // Sección: Procedimiento (pasos numerados)
+    procedureBackgroundImage: {
+      type: String, // Imagen de fondo full-bleed del procedimiento
+    },
+    candidatesText: {
+      type: String, // Sección: Tipo de candidatos (párrafo intro)
+    },
+    candidatesBullets: [String], // Viñetas de candidatos ideales
+    candidatesImage: {
+      type: String, // Imagen izquierda de candidatos
+    },
+    recoveryText: {
+      type: String, // Sección: Recuperación (párrafo intro)
+    },
+    recoveryBullets: [String], // Viñetas de cuidados post-tratamiento
     isFeatured: {
       type: Boolean,
       default: false,

@@ -69,6 +69,7 @@
   --pub-cream: #ECE0D2;
   --pub-warm-card: #E4D8CB;
   --pub-overlay-dark: rgba(45, 90, 71, 0.85);
+  --pub-dark: #1E3332;            /* Panel oscuro — teal profundo para heros */
 }
 
 @theme inline {

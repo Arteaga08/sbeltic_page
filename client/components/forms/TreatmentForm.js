@@ -38,8 +38,12 @@ const INITIAL = {
   images: [], beforeAfterImages: [],
   price: '', compareAtPrice: '',
   duration: '', sessions: '', downtime: '', resultsIn: '',
-  benefits: [], howItWorks: '', preparation: '', aftercare: '',
+  benefitsText: '', benefits: [], howItWorks: '', preparation: '', aftercare: '',
   targetAreas: [], skinTypes: [],
+  whySbeltic: '', aboutTreatment: '', aboutTreatmentImage: '',
+  procedureSteps: [], procedureBackgroundImage: '',
+  candidatesText: '', candidatesBullets: [], candidatesImage: '',
+  recoveryText: '', recoveryBullets: [],
   isFeatured: false, active: true,
 }
 
@@ -185,28 +189,124 @@ export default function TreatmentForm({ initial, onSuccess }) {
           </div>
         </Card>
 
-        {/* Contenido */}
+        {/* Sección: ¿Por qué en Sbeltic? */}
         <Card>
-          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-5">Contenido</h2>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: ¿Por qué en Sbeltic?
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Aparece debajo del StatsBar como texto destacado</p>
           <div className="flex flex-col gap-4">
-            <FormField label="Beneficios">
-              <TagInput {...arr('benefits')} placeholder="Añadir beneficio…" />
-            </FormField>
-            <FormField label="¿Cómo funciona?">
-              <Textarea name="howItWorks" value={form.howItWorks} onChange={handleChange} rows={3} />
-            </FormField>
-            <FormField label="Preparación">
-              <Textarea name="preparation" value={form.preparation} onChange={handleChange} rows={2} />
-            </FormField>
-            <FormField label="Cuidados posteriores">
-              <Textarea name="aftercare" value={form.aftercare} onChange={handleChange} rows={2} />
+            <FormField label="¿Por qué hacerte el tratamiento en Sbeltic?">
+              <Textarea name="whySbeltic" value={form.whySbeltic} onChange={handleChange} rows={4} placeholder="Explica las ventajas de realizar este tratamiento en Sbeltic. Ej: tecnología avanzada, equipo certificado, ambiente exclusivo…" />
             </FormField>
           </div>
         </Card>
 
-        {/* Zonas y tipos de piel */}
+        {/* Sección: De qué trata el tratamiento */}
         <Card>
-          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-5">Zonas y tipo de piel</h2>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: De qué trata el tratamiento
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Texto con imagen al lado — describe de qué va el tratamiento</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="Descripción del tratamiento">
+              <Textarea name="aboutTreatment" value={form.aboutTreatment} onChange={handleChange} rows={5} placeholder="Describe en detalle de qué trata el tratamiento, cómo funciona y qué resultados ofrece…" />
+            </FormField>
+            <FormField label="Imagen de la sección (aparece junto al texto)">
+              <ImageUploader entity="treatments" value={form.aboutTreatmentImage} onChange={(v) => setForm((p) => ({ ...p, aboutTreatmentImage: v || '' }))} />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Procedimiento */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: Procedimiento
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Imagen de fondo que cubre toda la sección con filtro de color — texto blanco encima</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="Pasos del procedimiento (presiona Enter para añadir cada paso)">
+              <TagInput {...arr('procedureSteps')} placeholder="Ej: Se aplica anestesia tópica en la zona…" />
+            </FormField>
+            <FormField label="Imagen de fondo (cubre toda la sección con filtro de color)">
+              <ImageUploader entity="treatments" value={form.procedureBackgroundImage} onChange={(v) => setForm((p) => ({ ...p, procedureBackgroundImage: v || '' }))} />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Beneficios */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: Beneficios
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Lista de beneficios del tratamiento en la página pública</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="Beneficios">
+              <TagInput {...arr('benefits')} placeholder="Añadir beneficio…" />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Candidatos ideales */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: Candidatos ideales
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Imagen a la izquierda y texto a la derecha — describe para quién es mejor el tratamiento</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="Párrafo introductorio">
+              <Textarea name="candidatesText" value={form.candidatesText} onChange={handleChange} rows={3} placeholder="Describe el perfil ideal de paciente. Ej: Este tratamiento es ideal para personas que buscan rejuvenecimiento sin tiempo de recuperación…" />
+            </FormField>
+            <FormField label="Viñetas — cada punto es un candidato ideal (presiona Enter para añadir)">
+              <TagInput {...arr('candidatesBullets')} placeholder="Ej: Tiene piel seca o sin brillo…" />
+            </FormField>
+            <FormField label="Imagen (aparece a la izquierda del texto)">
+              <ImageUploader entity="treatments" value={form.candidatesImage} onChange={(v) => setForm((p) => ({ ...p, candidatesImage: v || '' }))} />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Recuperación */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: Recuperación
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Texto centrado con fondo de textura estática — no requiere imagen</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="Párrafo introductorio">
+              <Textarea name="recoveryText" value={form.recoveryText} onChange={handleChange} rows={3} placeholder="Describe el proceso de recuperación. Ej: No hay tiempo de inactividad, puedes retomar tu rutina inmediatamente…" />
+            </FormField>
+            <FormField label="Viñetas — cuidados post-tratamiento (presiona Enter para añadir)">
+              <TagInput {...arr('recoveryBullets')} placeholder="Ej: Evita exfoliantes por 24 horas…" />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Contenido adicional (FAQ) */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Sección: Preguntas frecuentes
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Aparecen como acordeón desplegable al final de la página</p>
+          <div className="flex flex-col gap-4">
+            <FormField label="¿Cómo funciona?">
+              <Textarea name="howItWorks" value={form.howItWorks} onChange={handleChange} rows={3} placeholder="Explica el mecanismo de acción del tratamiento…" />
+            </FormField>
+            <FormField label="Preparación">
+              <Textarea name="preparation" value={form.preparation} onChange={handleChange} rows={2} placeholder="Instrucciones previas al tratamiento…" />
+            </FormField>
+            <FormField label="Cuidados posteriores">
+              <Textarea name="aftercare" value={form.aftercare} onChange={handleChange} rows={2} placeholder="Cuidados que el paciente debe seguir después…" />
+            </FormField>
+          </div>
+        </Card>
+
+        {/* Sección: Zonas y tipos de piel */}
+        <Card>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Zonas y tipo de piel
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Aparecen como chips en la sección de beneficios</p>
           <div className="flex flex-col gap-4">
             <FormField label="Zonas de tratamiento">
               <TagInput {...arr('targetAreas')} placeholder="Añadir zona…" suggestions={TARGET_AREAS} />
@@ -217,14 +317,17 @@ export default function TreatmentForm({ initial, onSuccess }) {
           </div>
         </Card>
 
-        {/* Imágenes */}
+        {/* Sección: Imágenes generales */}
         <Card>
-          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-5">Imágenes</h2>
+          <h2 className="text-xs font-semibold text-text-subtle uppercase tracking-widest mb-1">
+            Imágenes
+          </h2>
+          <p className="text-xs text-text-muted mb-5">Imágenes principales y galería de antes/después</p>
           <div className="flex flex-col gap-4">
-            <FormField label="Imágenes del tratamiento">
+            <FormField label="Imágenes del tratamiento (la primera se usa en el Hero)">
               <ImageUploader entity="treatments" multiple {...arr('images')} />
             </FormField>
-            <FormField label="Antes y después">
+            <FormField label="Antes y después (aparecen en la galería de comparación)">
               <ImageUploader entity="treatments" multiple value={form.beforeAfterImages} onChange={(v) => setForm((p) => ({ ...p, beforeAfterImages: v }))} />
             </FormField>
           </div>
