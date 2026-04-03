@@ -25,6 +25,7 @@ export const createTreatmentSchema = z.object({
   aboutTreatment: z.string().optional(),
   aboutTreatmentImage: z.string().optional(),
   procedureSteps: z.array(z.string()).optional(),
+  procedureIntroText: z.string().optional(),
   procedureBackgroundImage: z.string().optional(),
   candidatesText: z.string().optional(),
   candidatesBullets: z.array(z.string()).optional(),

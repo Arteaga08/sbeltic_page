@@ -41,7 +41,7 @@ const INITIAL = {
   benefitsText: '', benefits: [], howItWorks: '', preparation: '', aftercare: '',
   targetAreas: [], skinTypes: [],
   whySbeltic: '', aboutTreatment: '', aboutTreatmentImage: '',
-  procedureSteps: [], procedureBackgroundImage: '',
+  procedureSteps: [], procedureIntroText: '', procedureBackgroundImage: '',
   candidatesText: '', candidatesBullets: [], candidatesImage: '',
   recoveryText: '', recoveryBullets: [],
   isFeatured: false, active: true,
@@ -75,6 +75,28 @@ export default function TreatmentForm({ initial, onSuccess }) {
 
   function arr(field) {
     return { value: form[field], onChange: (v) => setForm((p) => ({ ...p, [field]: v })) }
+  }
+
+  function updateStep(index, value) {
+    setForm((prev) => {
+      const steps = [...prev.procedureSteps]
+      steps[index] = value
+      return { ...prev, procedureSteps: steps }
+    })
+  }
+
+  function removeStep(index) {
+    setForm((prev) => ({
+      ...prev,
+      procedureSteps: prev.procedureSteps.filter((_, i) => i !== index),
+    }))
+  }
+
+  function addStep() {
+    setForm((prev) => ({
+      ...prev,
+      procedureSteps: [...prev.procedureSteps, ''],
+    }))
   }
 
   function handleCategoryCreated(cat) {
@@ -135,9 +157,6 @@ export default function TreatmentForm({ initial, onSuccess }) {
             </FormField>
             <FormField label="Descripción corta">
               <Textarea name="shortDescription" value={form.shortDescription} onChange={handleChange} rows={2} placeholder="Aparece en listados y tarjetas" />
-            </FormField>
-            <FormField label="Descripción completa">
-              <Textarea name="description" value={form.description} onChange={handleChange} rows={5} />
             </FormField>
 
             {/* Categoría con creación inline */}
@@ -225,8 +244,41 @@ export default function TreatmentForm({ initial, onSuccess }) {
           </h2>
           <p className="text-xs text-text-muted mb-5">Imagen de fondo que cubre toda la sección con filtro de color — texto blanco encima</p>
           <div className="flex flex-col gap-4">
-            <FormField label="Pasos del procedimiento (presiona Enter para añadir cada paso)">
-              <TagInput {...arr('procedureSteps')} placeholder="Ej: Se aplica anestesia tópica en la zona…" />
+            <FormField label="Texto introductorio del procedimiento (aparece antes de los pasos)">
+              <Textarea name="procedureIntroText" value={form.procedureIntroText} onChange={handleChange} rows={3} placeholder="Describe brevemente cómo funciona el procedimiento antes de listar los pasos…" />
+            </FormField>
+            <FormField label="Pasos del procedimiento">
+              <div className="flex flex-col gap-3">
+                {form.procedureSteps.map((step, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-primary-light text-primary text-xs font-semibold flex items-center justify-center mt-2">
+                      {i + 1}
+                    </span>
+                    <Textarea
+                      value={step}
+                      onChange={(e) => updateStep(i, e.target.value)}
+                      rows={2}
+                      placeholder={`Describe el paso ${i + 1}…`}
+                      className="flex-1"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeStep(i)}
+                      className="mt-2 text-text-muted hover:text-danger transition-colors text-xs font-medium"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  onClick={addStep}
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-dashed border-border text-sm text-text-muted hover:border-primary hover:text-primary transition-colors w-fit"
+                >
+                  <Plus size={14} weight="bold" />
+                  Agregar paso
+                </button>
+              </div>
             </FormField>
             <FormField label="Imagen de fondo (cubre toda la sección con filtro de color)">
               <ImageUploader entity="treatments" value={form.procedureBackgroundImage} onChange={(v) => setForm((p) => ({ ...p, procedureBackgroundImage: v || '' }))} />
@@ -241,6 +293,9 @@ export default function TreatmentForm({ initial, onSuccess }) {
           </h2>
           <p className="text-xs text-text-muted mb-5">Lista de beneficios del tratamiento en la página pública</p>
           <div className="flex flex-col gap-4">
+            <FormField label="Texto introductorio (aparece arriba de la lista)">
+              <Textarea name="benefitsText" value={form.benefitsText} onChange={handleChange} rows={3} placeholder="Describe brevemente los principales beneficios del tratamiento…" />
+            </FormField>
             <FormField label="Beneficios">
               <TagInput {...arr('benefits')} placeholder="Añadir beneficio…" />
             </FormField>

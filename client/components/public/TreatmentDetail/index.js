@@ -17,22 +17,41 @@ import InfiniteCarousel from "../home/shared/InfiniteCarousel";
 function buildFaqItems(treatment) {
   const items = [];
   if (treatment.preparation)
-    items.push({ title: FAQ_LABELS.preparation, content: treatment.preparation, type: "text" });
+    items.push({
+      title: FAQ_LABELS.preparation,
+      content: treatment.preparation,
+      type: "text",
+    });
   if (treatment.aftercare)
-    items.push({ title: FAQ_LABELS.aftercare, content: treatment.aftercare, type: "text" });
+    items.push({
+      title: FAQ_LABELS.aftercare,
+      content: treatment.aftercare,
+      type: "text",
+    });
   if (treatment.contraindications?.length > 0)
-    items.push({ title: FAQ_LABELS.contraindications, content: treatment.contraindications, type: "list" });
+    items.push({
+      title: FAQ_LABELS.contraindications,
+      content: treatment.contraindications,
+      type: "list",
+    });
   return items;
 }
 
 export default function TreatmentDetail({ treatment, related = [] }) {
-  const hasStats = treatment.duration || treatment.sessions || treatment.downtime || treatment.resultsIn;
+  const hasStats =
+    treatment.duration ||
+    treatment.sessions ||
+    treatment.downtime ||
+    treatment.resultsIn;
   const hasWhySbeltic = Boolean(treatment.whySbeltic);
   const hasAboutTreatment = Boolean(treatment.aboutTreatment);
   const hasProcedure = treatment.procedureSteps?.length > 0;
   const hasBenefits = treatment.benefits?.length > 0;
-  const hasCandidates = Boolean(treatment.candidatesText) || treatment.candidatesBullets?.length > 0;
-  const hasRecovery = Boolean(treatment.recoveryText) || treatment.recoveryBullets?.length > 0;
+  const hasCandidates =
+    Boolean(treatment.candidatesText) ||
+    treatment.candidatesBullets?.length > 0;
+  const hasRecovery =
+    Boolean(treatment.recoveryText) || treatment.recoveryBullets?.length > 0;
   const hasBeforeAfter = treatment.beforeAfterImages?.length > 0;
   const faqItems = buildFaqItems(treatment);
 
@@ -47,10 +66,12 @@ export default function TreatmentDetail({ treatment, related = [] }) {
       {hasBenefits && <BenefitsSection treatment={treatment} />}
       {hasCandidates && <CandidatesSection treatment={treatment} />}
       {hasRecovery && <RecoverySection treatment={treatment} />}
-      {hasBeforeAfter && <BeforeAfterGallery images={treatment.beforeAfterImages} />}
+      <InfiniteCarousel />
+      {hasBeforeAfter && (
+        <BeforeAfterGallery images={treatment.beforeAfterImages} />
+      )}
       {faqItems.length > 0 && <FaqAccordion items={faqItems} />}
       <RelatedTreatmentsSection treatments={related} />
-      <CtaSection treatment={treatment} />
       <BookingBanner />
     </article>
   );

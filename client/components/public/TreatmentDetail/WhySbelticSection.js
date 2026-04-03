@@ -8,7 +8,7 @@ export default function WhySbelticSection({ treatment }) {
   return (
     <section
       className="relative w-full py-24 md:py-32 overflow-hidden"
-      style={{ background: "var(--pub-bg)" }}
+      style={{ background: "var(--pub-surface)" }}
     >
       {/* ── Líneas decorativas laterales ── */}
       <div
@@ -45,8 +45,8 @@ export default function WhySbelticSection({ treatment }) {
           className="font-bold uppercase leading-none tracking-widest mb-3"
           style={{
             fontFamily: "var(--font-heading)",
-            color: "var(--pub-gold)",
-            fontSize: "clamp(3rem, 8vw, 6rem)",
+            color: "var(--pub-accent)",
+            fontSize: "clamp(2.75rem, 6vw, 4.5rem)",
             letterSpacing: "0.08em",
           }}
         >
@@ -64,17 +64,17 @@ export default function WhySbelticSection({ treatment }) {
           para tu {treatment.name}?
         </p>
 
-        <GoldDivider size="sm" centered={true} className="mb-14 opacity-80" />
+        <GoldDivider size="sm" centered={true} className="mb-14 opacity-80" color="--pub-accent" />
 
         {/* ── Cuerpo de texto ── */}
         <div className="w-full space-y-7">
           {paragraphs.map((p, i) => (
             <p
               key={i}
-              className="font-light leading-[1.85] tracking-wide text-center"
+              className="font-light leading-[1.85] tracking-wide text-justify"
               style={{
                 color: "var(--pub-text)",
-                fontSize: "clamp(1.05rem, 1.3vw, 1.15rem)",
+                fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
               }}
             >
               {p}

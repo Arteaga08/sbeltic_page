@@ -7,8 +7,8 @@ export default function RelatedTreatmentsSection({ treatments }) {
 
   return (
     <section
-      className="w-full py-20 md:py-32"
-      style={{ background: "var(--pub-bg)" }}
+      className="w-full py-24 md:py-32"
+      style={{ background: "var(--pub-accent-light)" }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="text-center mb-14">
@@ -16,7 +16,7 @@ export default function RelatedTreatmentsSection({ treatments }) {
             También te puede interesar
           </SectionEyebrow>
           <h2
-            className="font-bold leading-tight mb-6"
+            className="font-bold uppercase leading-tight mb-6"
             style={{
               fontFamily: "var(--font-heading)",
               color: "var(--pub-text)",

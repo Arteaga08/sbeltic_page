@@ -45,10 +45,10 @@ function AccordionItem({ item, isOpen, onToggle }) {
               {item.content.map((c, i) => (
                 <li
                   key={i}
-                  className="font-light leading-[1.7]"
+                  className="font-light leading-[1.75] text-justify"
                   style={{
                     color: "var(--pub-text-muted)",
-                    fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)",
+                    fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
                   }}
                 >
                   {c}
@@ -57,10 +57,10 @@ function AccordionItem({ item, isOpen, onToggle }) {
             </ul>
           ) : (
             <p
-              className="font-light leading-[1.8]"
+              className="font-light leading-[1.85] text-justify"
               style={{
                 color: "var(--pub-text-muted)",
-                fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)",
+                fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
               }}
             >
               {item.content}
@@ -81,7 +81,7 @@ export default function FaqAccordion({ items }) {
 
   return (
     <section
-      className="w-full py-20 md:py-32"
+      className="w-full py-24 md:py-32"
       style={{ background: "var(--pub-surface)" }}
     >
       <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
@@ -89,15 +89,17 @@ export default function FaqAccordion({ items }) {
           Preguntas frecuentes
         </SectionEyebrow>
         <h2
-          className="font-bold leading-tight mb-6"
+          className="font-bold uppercase leading-tight mb-6"
           style={{
             fontFamily: "var(--font-heading)",
             color: "var(--pub-text)",
-            fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+            fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
           }}
         >
-          Todo lo que necesitas{" "}
-          <span style={{ color: "var(--pub-accent)" }}>saber</span>
+          Todo Lo Que
+          <br />
+          Necesitas{" "}
+          <span style={{ color: "var(--pub-accent)" }}>Saber</span>
         </h2>
         <GoldDivider size="sm" className="mb-12" />
 

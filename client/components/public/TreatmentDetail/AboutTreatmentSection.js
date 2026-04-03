@@ -1,15 +1,39 @@
 import Image from "next/image";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
+import { BASE_URL } from "./constants";
+
+function parseBlocks(text) {
+  const lines = text.split(/\n/).filter(Boolean);
+  const blocks = [];
+  let currentBullets = [];
+
+  for (const line of lines) {
+    const match = line.match(/^[-*•]\s+(.+)/);
+    if (match) {
+      currentBullets.push(match[1]);
+    } else {
+      if (currentBullets.length) {
+        blocks.push({ type: "bullets", items: [...currentBullets] });
+        currentBullets = [];
+      }
+      blocks.push({ type: "paragraph", text: line });
+    }
+  }
+  if (currentBullets.length) {
+    blocks.push({ type: "bullets", items: currentBullets });
+  }
+  return blocks;
+}
 
 export default function AboutTreatmentSection({ treatment }) {
   if (!treatment.aboutTreatment) return null;
 
-  const paragraphs = treatment.aboutTreatment.split(/\n+/).filter(Boolean);
+  const blocks = parseBlocks(treatment.aboutTreatment);
 
   return (
     <section
-      className="relative w-full py-24 md:py-36 overflow-hidden"
-      style={{ background: "var(--pub-bg)" }}
+      className="relative w-full py-24 md:py-32 overflow-hidden"
+      style={{ background: "var(--pub-accent-light)" }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
 
@@ -34,7 +58,7 @@ export default function AboutTreatmentSection({ treatment }) {
             style={{
               fontFamily: "var(--font-heading)",
               color: "var(--pub-gold)",
-              fontSize: "clamp(3rem, 7vw, 5.5rem)",
+              fontSize: "clamp(2.75rem, 6vw, 4.5rem)",
               letterSpacing: "0.06em",
             }}
           >
@@ -56,28 +80,54 @@ export default function AboutTreatmentSection({ treatment }) {
 
           <GoldDivider size="sm" centered={false} className="mb-12 opacity-80" />
 
-          {/* Cuerpo */}
-          <div className="space-y-6">
-            {paragraphs.map((p, i) => (
-              <p
-                key={i}
-                className={`leading-[1.85] tracking-wide ${i === 0 ? "font-light" : "font-extralight"}`}
-                style={{
-                  color: "var(--pub-text)",
-                  fontSize: "clamp(1rem, 1.2vw, 1.1rem)",
-                  opacity: i === 0 ? 0.9 : 0.75,
-                }}
-              >
-                {p}
-              </p>
-            ))}
+          {/* Cuerpo — párrafos y viñetas */}
+          <div className="space-y-6 w-full">
+            {blocks.map((block, i) => {
+              if (block.type === "bullets") {
+                return (
+                  <ul key={i} className="flex flex-col gap-4 w-full">
+                    {block.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-4">
+                        <span
+                          className="mt-[0.45em] shrink-0 w-1.5 h-1.5 rounded-full"
+                          style={{ background: "var(--pub-gold)" }}
+                          aria-hidden
+                        />
+                        <span
+                          className="font-extralight leading-[1.75] tracking-wide"
+                          style={{
+                            color: "var(--pub-text)",
+                            fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
+                            opacity: 0.8,
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              return (
+                <p
+                  key={i}
+                  className={`leading-[1.85] tracking-wide text-justify ${i === 0 ? "font-light" : "font-extralight"}`}
+                  style={{
+                    color: "var(--pub-text)",
+                    fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
+                    opacity: i === 0 ? 0.9 : 0.75,
+                  }}
+                >
+                  {block.text}
+                </p>
+              );
+            })}
           </div>
         </div>
 
         {/* ── Columna imagen ── */}
         {treatment.aboutTreatmentImage && (
           <div className="flex justify-center md:justify-end">
-            {/* Marco oval / arco */}
             <div
               className="relative w-full overflow-hidden"
               style={{
@@ -90,17 +140,16 @@ export default function AboutTreatmentSection({ treatment }) {
               }}
             >
               <Image
-                src={treatment.aboutTreatmentImage}
+                src={`${BASE_URL}${treatment.aboutTreatmentImage}`}
                 alt={`Tratamiento ${treatment.name}`}
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
         )}
-
-        {/* Si no hay imagen, el texto ocupa todo el ancho */}
       </div>
     </section>
   );

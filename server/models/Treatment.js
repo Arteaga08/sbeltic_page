@@ -71,6 +71,9 @@ const treatmentSchema = new mongoose.Schema(
       type: String, // Imagen junto al texto de aboutTreatment
     },
     procedureSteps: [String], // Sección: Procedimiento (pasos numerados)
+    procedureIntroText: {
+      type: String, // Texto introductorio que aparece antes de los pasos del procedimiento
+    },
     procedureBackgroundImage: {
       type: String, // Imagen de fondo full-bleed del procedimiento
     },

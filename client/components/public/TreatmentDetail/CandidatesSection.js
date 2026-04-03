@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GoldDivider from "@/components/public/home/shared/GoldDivider";
+import { BASE_URL } from "./constants";
 
 export default function CandidatesSection({ treatment }) {
   const hasText = Boolean(treatment.candidatesText);
@@ -10,31 +10,29 @@ export default function CandidatesSection({ treatment }) {
 
   return (
     <section
-      className="relative w-full py-24 md:py-36 overflow-hidden"
-      style={{ background: "var(--pub-bg)" }}
+      className="relative w-full py-24 md:py-32 overflow-hidden"
+      style={{ background: "var(--pub-dark)" }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
 
         {/* ── Columna imagen (izquierda) ── */}
         {hasImage && (
           <div className="flex justify-center md:justify-start order-2 md:order-1">
-            {/* Marco arco: redondeado arriba, plano abajo */}
             <div
               className="relative w-full overflow-hidden"
               style={{
                 maxWidth: "460px",
                 aspectRatio: "3 / 4",
                 borderRadius: "999px 999px 40px 40px",
-                border: "1.5px solid",
-                borderColor: "var(--pub-gold)",
-                boxShadow:
-                  "0 0 0 8px var(--pub-bg), 0 0 0 9.5px rgba(var(--pub-gold-rgb, 180,148,90), 0.2)",
+                border: "1.5px solid rgba(255,255,255,0.15)",
+                boxShadow: "0 0 0 8px var(--pub-dark), 0 0 0 9.5px rgba(255,255,255,0.08)",
               }}
             >
               <Image
-                src={treatment.candidatesImage}
+                src={`${BASE_URL}${treatment.candidatesImage}`}
                 alt={`Candidatos para ${treatment.name}`}
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
@@ -52,8 +50,7 @@ export default function CandidatesSection({ treatment }) {
           <p
             className="font-semibold tracking-[0.35em] uppercase mb-3"
             style={{
-              color: "var(--pub-text)",
-              opacity: 0.5,
+              color: "rgba(255,255,255,0.6)",
               fontSize: "clamp(0.65rem, 1vw, 0.75rem)",
             }}
           >
@@ -65,8 +62,8 @@ export default function CandidatesSection({ treatment }) {
             className="font-bold uppercase leading-none mb-4"
             style={{
               fontFamily: "var(--font-heading)",
-              color: "var(--pub-gold)",
-              fontSize: "clamp(2.8rem, 6vw, 5rem)",
+              color: "#ffffff",
+              fontSize: "clamp(2.75rem, 6vw, 4.5rem)",
               letterSpacing: "0.06em",
             }}
           >
@@ -77,8 +74,7 @@ export default function CandidatesSection({ treatment }) {
           <p
             className="font-semibold uppercase mb-8"
             style={{
-              color: "var(--pub-text)",
-              opacity: 0.5,
+              color: "rgba(255,255,255,0.6)",
               fontSize: "clamp(0.65rem, 1vw, 0.75rem)",
               letterSpacing: "0.3em",
             }}
@@ -86,16 +82,20 @@ export default function CandidatesSection({ treatment }) {
             ¿Es el {treatment.name} para mí?
           </p>
 
-          <GoldDivider size="sm" centered={false} className="mb-12 opacity-80" />
+          {/* Divider blanco */}
+          <div
+            className="w-12 h-0.5 mb-12"
+            style={{ background: "rgba(255,255,255,0.3)" }}
+            aria-hidden
+          />
 
           {/* Párrafo introductorio */}
           {hasText && (
             <p
-              className="font-light leading-[1.85] tracking-wide mb-8"
+              className="font-light leading-[1.85] tracking-wide mb-8 text-justify"
               style={{
-                color: "var(--pub-text)",
-                fontSize: "clamp(1rem, 1.2vw, 1.1rem)",
-                opacity: 0.85,
+                color: "rgba(255,255,255,0.85)",
+                fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
               }}
             >
               {treatment.candidatesText}
@@ -107,18 +107,16 @@ export default function CandidatesSection({ treatment }) {
             <ul className="flex flex-col gap-4 w-full">
               {treatment.candidatesBullets.map((bullet, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  {/* Bullet dorado */}
                   <span
                     className="mt-[0.45em] shrink-0 w-1.5 h-1.5 rounded-full"
-                    style={{ background: "var(--pub-gold)" }}
+                    style={{ background: "var(--pub-accent)" }}
                     aria-hidden
                   />
                   <span
                     className="font-extralight leading-[1.75] tracking-wide"
                     style={{
-                      color: "var(--pub-text)",
-                      fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)",
-                      opacity: 0.8,
+                      color: "rgba(255,255,255,0.75)",
+                      fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
                     }}
                   >
                     {bullet}

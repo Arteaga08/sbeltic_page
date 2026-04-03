@@ -106,9 +106,9 @@ export default function HeroSection({ treatment }) {
             {/* Descripción */}
             {heroDescription && (
               <p
-                className="font-light leading-relaxed mb-12 md:mb-16"
+                className="font-light leading-relaxed mb-12 md:mb-16 text-justify"
                 style={{
-                  fontSize: "clamp(1.15rem, 1.15vw, 1.1rem)",
+                  fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
                   color: "var(--pub-text)",
                   opacity: 0.85,
                 }}

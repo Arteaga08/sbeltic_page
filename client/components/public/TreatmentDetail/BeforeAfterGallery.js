@@ -9,7 +9,7 @@ export default function BeforeAfterGallery({ images }) {
   return (
     <section
       className="w-full py-20 md:py-32"
-      style={{ background: "var(--pub-bg)" }}
+      style={{ background: "var(--pub-accent-light)" }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="text-center mb-14">
