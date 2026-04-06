@@ -70,7 +70,7 @@ export default function BenefitsSection({ treatment }) {
               key={i}
               className="flex flex-col p-8 md:p-10"
               style={{
-                background: "var(--pub-bg)",
+                background: "var(--pub-accent-light)",
                 borderRadius: "var(--radius-lg)",
                 borderTop: "2px solid var(--pub-gold)",
               }}

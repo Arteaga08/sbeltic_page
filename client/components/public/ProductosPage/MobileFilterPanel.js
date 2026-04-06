@@ -18,7 +18,7 @@ export default function MobileFilterPanel({ isOpen, onClose, children }) {
         className={`fixed top-0 right-0 bottom-0 z-50 w-[85%] max-w-sm flex flex-col transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ background: "var(--pub-bg)" }}
+        style={{ background: "var(--pub-accent-light)" }}
       >
         <div
           className="flex items-center justify-between px-6 py-4"
@@ -32,7 +32,7 @@ export default function MobileFilterPanel({ isOpen, onClose, children }) {
           </h2>
           <button
             onClick={onClose}
-            className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer transition-colors duration-200"
+            className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer transition-all duration-200 hover:bg-black/6 active:bg-black/12 active:scale-[0.92]"
             style={{ color: "var(--pub-text)" }}
             aria-label="Cerrar filtros"
           >
@@ -46,11 +46,8 @@ export default function MobileFilterPanel({ isOpen, onClose, children }) {
         >
           <button
             onClick={onClose}
-            className="w-full py-4 text-xs font-bold tracking-widest uppercase cursor-pointer transition-all duration-200 hover:opacity-90 rounded-none"
-            style={{
-              background: "var(--pub-text)",
-              color: "#fff",
-            }}
+            className="w-full py-4 text-xs font-bold tracking-widest uppercase cursor-pointer transition-all duration-200 bg-(--pub-text) hover:bg-[#2C2420] active:scale-[0.97] active:opacity-90 rounded-none"
+            style={{ color: "#fff" }}
           >
             Aplicar
           </button>

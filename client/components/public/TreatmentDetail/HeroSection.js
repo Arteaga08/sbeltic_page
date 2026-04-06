@@ -195,7 +195,7 @@ export default function HeroSection({ treatment }) {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-fit px-5 py-3 md:px-6 md:py-4 rounded-full transition-all duration-300 cursor-pointer hover:opacity-85"
+              className="group flex items-center justify-center w-fit px-5 py-3 md:px-6 md:py-4 rounded-full transition-all duration-200 cursor-pointer hover:bg-[#2C2420] hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none active:translate-y-0"
               style={{
                 backgroundColor: "var(--pub-text)",
                 color: "#ffffff",

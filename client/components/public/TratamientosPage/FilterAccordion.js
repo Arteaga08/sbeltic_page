@@ -18,7 +18,7 @@ export default function FilterAccordion({
     >
       <button
         onClick={onToggleOpen}
-        className="w-full flex items-center justify-between cursor-pointer"
+        className="w-full flex items-center justify-between cursor-pointer rounded-sm transition-colors duration-200 hover:bg-black/3 active:bg-black/6 py-0.5 -my-0.5 px-1 -mx-1"
       >
         <span
           className="text-xs font-semibold tracking-widest uppercase"

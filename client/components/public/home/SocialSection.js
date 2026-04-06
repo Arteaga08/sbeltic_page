@@ -215,7 +215,7 @@ export default function SocialSection({ posts = [] }) {
             <div className="flex items-center gap-4 mt-2">
               <button
                 onClick={prev}
-                className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 shadow-md"
+                className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-[0.92] active:shadow-none shadow-md"
                 style={{ background: "var(--pub-text)", color: "#ffffff" }}
                 aria-label="Post anterior"
               >
@@ -224,7 +224,7 @@ export default function SocialSection({ posts = [] }) {
 
               <button
                 onClick={next}
-                className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 shadow-md"
+                className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-[0.92] active:shadow-none shadow-md"
                 style={{ background: "var(--pub-text)", color: "#ffffff" }}
                 aria-label="Siguiente post"
               >
@@ -282,7 +282,7 @@ export default function SocialSection({ posts = [] }) {
             href="https://www.instagram.com/sbelticdurango/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 w-full md:w-fit flex items-center justify-center gap-3 px-10 py-4 md:py-4 rounded-full text-xs font-bold tracking-widest uppercase cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]"
+            className="mt-2 w-full md:w-fit flex items-center justify-center gap-3 px-10 py-4 md:py-4 rounded-full text-xs font-bold tracking-widest uppercase cursor-pointer transition-all duration-200 hover:bg-[#2C2420] hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none"
             style={{ background: "var(--pub-text)", color: "#fff" }}
           >
             <InstagramLogoIcon size={20} weight="fill" />

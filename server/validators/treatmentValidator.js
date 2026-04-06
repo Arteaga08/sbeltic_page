@@ -7,6 +7,8 @@ export const createTreatmentSchema = z.object({
   category: z.string().optional(), // ObjectId como string
   images: z.array(z.string()).optional(),
   beforeAfterImages: z.array(z.string()).optional(),
+  beforeImages: z.array(z.string()).optional(),
+  afterImages: z.array(z.string()).optional(),
   price: z.number().min(0).optional(),
   compareAtPrice: z.number().min(0).optional(),
   duration: z.string().optional(),

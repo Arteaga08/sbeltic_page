@@ -24,6 +24,8 @@ const treatmentSchema = new mongoose.Schema(
     },
     images: [String],
     beforeAfterImages: [String],
+    beforeImages: [String],
+    afterImages: [String],
     price: {
       type: Number,
       min: [0, 'El precio no puede ser negativo'],

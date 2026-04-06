@@ -35,7 +35,7 @@ const SESSIONS_OPTIONS = [
 
 const INITIAL = {
   name: '', shortDescription: '', description: '', category: '',
-  images: [], beforeAfterImages: [],
+  images: [], beforeAfterImages: [], beforeImages: [], afterImages: [],
   price: '', compareAtPrice: '',
   duration: '', sessions: '', downtime: '', resultsIn: '',
   benefitsText: '', benefits: [], howItWorks: '', preparation: '', aftercare: '',
@@ -385,6 +385,15 @@ export default function TreatmentForm({ initial, onSuccess }) {
             <FormField label="Antes y después (aparecen en la galería de comparación)">
               <ImageUploader entity="treatments" multiple value={form.beforeAfterImages} onChange={(v) => setForm((p) => ({ ...p, beforeAfterImages: v }))} />
             </FormField>
+            <p className="text-[11px] text-text-muted -mt-1 mb-2">Las siguientes imágenes se emparejan por posición: la 1ª de "Antes" con la 1ª de "Después", etc.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <FormField label="Imágenes Antes">
+                <ImageUploader entity="treatments" multiple value={form.beforeImages} onChange={(v) => setForm((p) => ({ ...p, beforeImages: v }))} />
+              </FormField>
+              <FormField label="Imágenes Después">
+                <ImageUploader entity="treatments" multiple value={form.afterImages} onChange={(v) => setForm((p) => ({ ...p, afterImages: v }))} />
+              </FormField>
+            </div>
           </div>
         </Card>
 

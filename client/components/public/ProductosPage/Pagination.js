@@ -25,12 +25,7 @@ export default function Pagination({ page, pages, total, perPage, onChange }) {
         <button
           onClick={() => onChange(page - 1)}
           disabled={page === 1}
-          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
-          style={{
-            border: "1px solid var(--pub-border)",
-            color: "var(--pub-text)",
-            background: "transparent",
-          }}
+          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase text-(--pub-text) border border-(--pub-border) bg-transparent transition-all duration-200 cursor-pointer hover:bg-(--pub-accent)/6 hover:border-(--pub-accent) hover:-translate-y-0.5 active:bg-(--pub-accent)/12 active:scale-[0.97] active:translate-y-0 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-(--pub-border) disabled:hover:translate-y-0 disabled:active:scale-100"
         >
           <CaretLeft size={14} />
           Anterior
@@ -46,12 +41,7 @@ export default function Pagination({ page, pages, total, perPage, onChange }) {
         <button
           onClick={() => onChange(page + 1)}
           disabled={page === pages}
-          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
-          style={{
-            border: "1px solid var(--pub-border)",
-            color: "var(--pub-text)",
-            background: "transparent",
-          }}
+          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase text-(--pub-text) border border-(--pub-border) bg-transparent transition-all duration-200 cursor-pointer hover:bg-(--pub-accent)/6 hover:border-(--pub-accent) hover:-translate-y-0.5 active:bg-(--pub-accent)/12 active:scale-[0.97] active:translate-y-0 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:border-(--pub-border) disabled:hover:translate-y-0 disabled:active:scale-100"
         >
           Siguiente
           <CaretRight size={14} />

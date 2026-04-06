@@ -12,7 +12,7 @@ function AccordionItem({ item, isOpen, onToggle }) {
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex items-center justify-between gap-6 py-7 text-left cursor-pointer transition-opacity hover:opacity-70"
+        className="w-full flex items-center justify-between gap-6 py-7 text-left cursor-pointer transition-all duration-200 hover:bg-black/3 active:bg-black/6 rounded-sm px-1 -mx-1"
       >
         <span
           className="font-semibold leading-snug"

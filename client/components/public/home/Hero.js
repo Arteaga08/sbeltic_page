@@ -54,14 +54,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <Link
             href="/contacto"
-            className="px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-opacity hover:opacity-85"
+            className="px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none"
             style={{ background: "var(--pub-accent)", color: "#fff" }}
           >
             Agenda una consulta
           </Link>
           <Link
             href="/tratamientos"
-            className="px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase border-2 border-white text-white transition-colors hover:bg-white/10"
+            className="px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase border-2 border-white text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-0.5 active:bg-white/25 active:scale-[0.97]"
           >
             Ver tratamientos
           </Link>

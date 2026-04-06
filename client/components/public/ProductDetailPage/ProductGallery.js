@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+import { BASE_URL } from "../ProductosPage/constants";
 
 export default function ProductGallery({ product }) {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -59,10 +59,10 @@ export default function ProductGallery({ product }) {
             <button
               key={idx}
               onClick={() => setSelectedImage(idx)}
-              className={`relative w-20 h-24 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+              className={`relative w-20 h-24 shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-200 active:scale-[0.95] ${
                 selectedImage === idx
                   ? "border-(--pub-accent)"
-                  : "border-transparent opacity-70 hover:opacity-100"
+                  : "border-transparent opacity-70 hover:opacity-100 hover:border-(--pub-border)"
               }`}
             >
               <Image

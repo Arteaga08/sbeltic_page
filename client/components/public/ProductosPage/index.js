@@ -80,11 +80,11 @@ export default function ProductosPage({
       : null;
 
   return (
-    <div style={{ background: "var(--pub-bg)", minHeight: "100vh" }}>
+    <div style={{ background: "var(--pub-accent-light)", minHeight: "100vh" }}>
       {/* Header con imagen dividida estilo Skin Pharm */}
       <CollectionHeader
         category={activeCategoryObj}
-        fallbackTitle="All Products"
+        fallbackTitle="Todos los productos"
       />
 
       {/* Categorías rectangulares */}
@@ -101,7 +101,7 @@ export default function ProductosPage({
       <div className="md:hidden flex items-center gap-3 px-6 py-4">
         <button
           onClick={() => setMobileFiltersOpen(true)}
-          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase cursor-pointer border border-black/20"
+          className="flex items-center gap-2 px-5 py-3 text-xs font-semibold tracking-widest uppercase cursor-pointer border border-black/20 transition-all duration-200 hover:bg-black/4 hover:border-black/35 active:bg-black/8 active:scale-[0.97]"
           style={{ color: "var(--pub-text)", background: "transparent" }}
         >
           Filtrar / Ordenar
@@ -203,8 +203,9 @@ export default function ProductosPage({
           </div>
         </div>
       </div>
+       <InfiniteCarousel />
       <BookingBanner />
-      <InfiniteCarousel />
+     
     </div>
   );
 }

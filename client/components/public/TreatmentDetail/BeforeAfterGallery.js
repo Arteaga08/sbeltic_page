@@ -11,7 +11,7 @@ export default function BeforeAfterGallery({ images }) {
       className="w-full py-20 md:py-32"
       style={{ background: "var(--pub-accent-light)" }}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 uppercase">
         <div className="text-center mb-14">
           <SectionEyebrow variant="gold" className="mb-5">
             Resultados reales
@@ -25,7 +25,7 @@ export default function BeforeAfterGallery({ images }) {
             }}
           >
             Antes y{" "}
-            <span style={{ color: "var(--pub-accent)" }}>después</span>
+            <span style={{ color: "var(--pub-accent)" }}>Después</span>
           </h2>
           <GoldDivider size="sm" />
         </div>

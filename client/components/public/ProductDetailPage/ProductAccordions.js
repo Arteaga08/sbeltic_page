@@ -11,7 +11,7 @@ function AccordionItem({ title, content, isOpen, onClick }) {
     <div className="border-b border-black/10">
       <button
         onClick={onClick}
-        className="w-full py-5 flex items-center justify-between text-left focus:outline-none"
+        className="w-full py-5 flex items-center justify-between text-left focus:outline-none transition-colors duration-200 hover:bg-black/3 active:bg-black/6 rounded-sm px-1 -mx-1"
       >
         <span
           className="text-sm md:text-base font-light tracking-wide"
@@ -30,7 +30,7 @@ function AccordionItem({ title, content, isOpen, onClick }) {
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[800px] opacity-100 pb-6" : "max-h-0 opacity-0"
+          isOpen ? "max-h-200 opacity-100 pb-6" : "max-h-0 opacity-0"
         }`}
       >
         <div className="font-light leading-relaxed text-black/70 text-sm md:text-base">

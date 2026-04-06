@@ -46,7 +46,7 @@ export default function ClinicSection({ videoSrc }) {
 
           <Link
             href="/nosotros"
-            className="mt-2 w-full md:w-fit text-center px-8 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white text-white transition-all duration-300 hover:bg-white hover:text-(--pub-accent) hover:shadow-xl hover:-translate-y-1"
+            className="mt-2 w-full md:w-fit text-center px-8 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white text-white transition-all duration-200 hover:bg-white/15 hover:-translate-y-0.5 active:bg-white/25 active:scale-[0.97]"
           >
             Conoce nuestra clínica
           </Link>

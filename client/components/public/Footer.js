@@ -100,7 +100,7 @@ export default function Footer() {
                 <button
                   type="button"
                   aria-label="Suscribirse"
-                  className="text-[#9e9a94] hover:text-white transition-colors px-1"
+                  className="text-[#9e9a94] hover:text-white transition-all duration-200 px-1 hover:scale-110 active:scale-[0.92]"
                 >
                   <ArrowRight size={18} weight="light" />
                 </button>

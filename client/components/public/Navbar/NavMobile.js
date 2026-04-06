@@ -54,7 +54,7 @@ export default function NavMobile({ open, onClose }) {
           <button
             onClick={onClose}
             aria-label="Cerrar menú"
-            className="p-2 -mr-2 rounded-full transition-colors hover:bg-slate-50"
+            className="p-2 -mr-2 rounded-full transition-all duration-200 hover:bg-slate-100 active:bg-slate-200 active:scale-[0.92]"
             style={{ color: "var(--pub-text-muted)" }}
           >
             <X size={24} weight="bold" />
@@ -128,7 +128,7 @@ export default function NavMobile({ open, onClose }) {
             target="_blank"
             rel="noreferrer"
             onClick={onClose}
-            className="flex items-center justify-center w-full py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-colors duration-150 hover:opacity-90 shadow-md"
+            className="flex items-center justify-center w-full py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:bg-(--pub-accent-hover) hover:shadow-md active:scale-[0.97] active:shadow-none shadow-md"
             style={{ background: "var(--pub-accent)", color: "#fff" }}
           >
             Agendar Consulta

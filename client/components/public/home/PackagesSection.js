@@ -51,7 +51,7 @@ export default function PackagesSection() {
 
           <Link
             href="/productos?isPackage=true"
-            className="inline-flex items-center gap-2.5 py-3.5 px-8 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2.5 py-3.5 px-8 rounded-full text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none"
             style={{ background: 'var(--pub-accent)', color: '#fff' }}
           >
             Ver paquetes

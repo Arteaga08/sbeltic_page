@@ -130,14 +130,14 @@ export default function Navbar() {
               href={whatsappLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center px-5 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-colors duration-150 hover:bg-slate-800 shadow-sm"
+              className="inline-flex items-center px-5 md:px-7 py-2.5 md:py-3 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase transition-all duration-200 hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none shadow-sm"
               style={{ background: "var(--pub-accent)", color: "#fff" }}
             >
               Agendar
             </a>
 
             <button
-              className="md:hidden p-1.5 rounded-md transition-colors hover:bg-slate-100"
+              className="md:hidden p-1.5 rounded-md transition-all duration-200 hover:bg-slate-100 active:bg-slate-200 active:scale-[0.92]"
               style={{ color: "var(--pub-text)" }}
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menú"

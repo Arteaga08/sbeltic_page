@@ -37,7 +37,7 @@ export default function FilterSidebar({
         {hasActiveFilters && (
           <button
             onClick={clearAll}
-            className="text-[11px] uppercase tracking-widest font-medium cursor-pointer transition-colors duration-200 underline"
+            className="text-[11px] uppercase tracking-widest font-medium cursor-pointer transition-all duration-200 underline hover:text-(--pub-text) active:scale-[0.97]"
             style={{ color: "var(--pub-text-muted)" }}
           >
             Limpiar

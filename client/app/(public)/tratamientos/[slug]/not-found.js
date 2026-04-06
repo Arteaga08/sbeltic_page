@@ -4,7 +4,7 @@ export default function TreatmentNotFound() {
   return (
     <section
       className="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center"
-      style={{ background: "var(--pub-bg)" }}
+      style={{ background: "var(--pub-accent-light)" }}
     >
       <p
         className="text-xs font-semibold tracking-[0.3em] uppercase mb-4"

@@ -77,7 +77,7 @@ export default function BookingBanner({
                 href={buttonLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 rounded-full text-center"
+                className="w-full sm:w-auto px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-200 rounded-full text-center active:scale-[0.97] active:shadow-none"
                 style={{
                   backgroundColor: "var(--pub-accent)",
                   color: "white",

@@ -49,9 +49,8 @@ export default function CtaSection({ treatment }) {
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-3 px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-[0.98]"
+          className="inline-flex items-center justify-center gap-3 px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase transition-all duration-200 bg-(--pub-accent) hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none active:translate-y-0"
           style={{
-            background: "var(--pub-accent)",
             color: "#fff",
             borderRadius: "var(--radius-md)",
           }}

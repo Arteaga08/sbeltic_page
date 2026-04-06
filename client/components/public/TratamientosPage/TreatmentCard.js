@@ -142,9 +142,8 @@ export default function TreatmentCard({ treatment }) {
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/btn flex items-center justify-center gap-2.5 w-full py-3.5 px-2 text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
+          className="group/btn flex items-center justify-center gap-2.5 w-full py-3.5 px-2 text-[10px] md:text-xs font-bold tracking-[0.15em] uppercase cursor-pointer transition-all duration-200 bg-(--pub-accent) hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none"
           style={{
-            background: "var(--pub-accent)",
             color: "#fff",
             borderRadius: "var(--radius-md)",
           }}

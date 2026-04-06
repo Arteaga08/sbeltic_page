@@ -120,7 +120,7 @@ export default function ProductsSection({ products = [] }) {
     <section
       className="py-20 md:py-28"
       style={{
-        background: 'var(--pub-bg)',
+        background: 'var(--pub-accent-light)',
         borderTop: '1px solid rgba(183,142,86,0.3)',
         borderBottom: '1px solid rgba(183,142,86,0.3)',
       }}
@@ -204,7 +204,7 @@ export default function ProductsSection({ products = [] }) {
               {/* Flechas de navegación — solo desktop */}
               <button
                 onClick={() => scroll(-1)}
-                className="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:shadow-xl active:scale-95"
+                className="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:shadow-xl active:scale-[0.92] active:shadow-none"
                 style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--pub-text)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pub-accent)'; e.currentTarget.style.color = '#fff' }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.85)'; e.currentTarget.style.color = 'var(--pub-text)' }}
@@ -214,7 +214,7 @@ export default function ProductsSection({ products = [] }) {
               </button>
               <button
                 onClick={() => scroll(1)}
-                className="hidden md:flex absolute -right-20 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:shadow-xl active:scale-95"
+                className="hidden md:flex absolute -right-20 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:shadow-xl active:scale-[0.92] active:shadow-none"
                 style={{ background: 'rgba(255,255,255,0.85)', color: 'var(--pub-text)' }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--pub-accent)'; e.currentTarget.style.color = '#fff' }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.85)'; e.currentTarget.style.color = 'var(--pub-text)' }}

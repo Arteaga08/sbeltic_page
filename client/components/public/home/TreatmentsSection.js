@@ -97,13 +97,13 @@ export default function TreatmentsSection({ categories = [] }) {
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-10 md:mt-14">
           <Link
             href="/contacto"
-            className="w-70 md:w-[320px] flex items-center justify-center py-4 md:py-5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase bg-(--pub-accent) text-white transition-all duration-300 hover:bg-(--pub-accent-hover) hover:shadow-xl hover:-translate-y-1"
+            className="w-70 md:w-[320px] flex items-center justify-center py-4 md:py-5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase bg-(--pub-accent) text-white transition-all duration-200 hover:bg-(--pub-accent-hover) hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none"
           >
             Agendar consulta
           </Link>
           <Link
             href="/tratamientos"
-            className="w-70 md:w-[320px] flex items-center justify-center py-4 md:py-5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase border-2 border-(--pub-accent) text-(--pub-accent) transition-all duration-300 hover:bg-(--pub-accent) hover:text-white hover:shadow-xl hover:-translate-y-1"
+            className="w-70 md:w-[320px] flex items-center justify-center py-4 md:py-5 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase border-2 border-(--pub-accent) text-(--pub-accent) transition-all duration-200 hover:bg-(--pub-accent) hover:text-white hover:shadow-md hover:-translate-y-0.5 active:bg-(--pub-accent-hover) active:border-(--pub-accent-hover) active:text-white active:scale-[0.97] active:shadow-none"
           >
             Ver todos los tratamientos
           </Link>
