@@ -17,7 +17,7 @@ import Pagination from "./Pagination";
 
 const TREATMENTS_PER_PAGE = 20;
 
-export default function TratamientosPage({
+export default function TreatmentsPage({
   initialTreatments = [],
   categories = [],
 }) {

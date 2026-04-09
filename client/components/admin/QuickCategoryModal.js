@@ -39,7 +39,7 @@ export default function QuickCategoryModal({ open, onClose, onCreated, type }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-surface rounded-xl shadow-[var(--shadow-lg)] p-7 w-full max-w-md">
+      <div className="relative bg-surface rounded-xl shadow-[var(--shadow-lg)] p-6 w-full max-w-md">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h3 className="text-lg font-semibold text-text">Nueva categoría</h3>
@@ -49,7 +49,7 @@ export default function QuickCategoryModal({ open, onClose, onCreated, type }) {
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-sm text-text-muted hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-sm text-text-muted hover:bg-bg transition-colors focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:outline-none"
           >
             <X size={18} />
           </button>

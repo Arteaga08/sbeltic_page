@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { publicCategories, publicTreatments } from "@/lib/api-public";
-import AntesYDespuesPage from "@/components/public/AntesYDespuesPage";
+import BeforeAfterPage from "@/components/public/BeforeAfterPage";
 
 export const metadata = {
   title: "Antes y Después — Sbeltic",
@@ -22,7 +22,7 @@ export default async function AntesYDespuesRoute() {
 
   return (
     <Suspense>
-      <AntesYDespuesPage categories={categories} treatments={treatments} />
+      <BeforeAfterPage categories={categories} treatments={treatments} />
     </Suspense>
   );
 }

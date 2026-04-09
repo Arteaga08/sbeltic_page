@@ -35,7 +35,7 @@ export default function DashboardPage() {
     <div>
       <div className="mb-8">
         <h1
-          className="text-3xl font-semibold text-text"
+          className="text-2xl font-semibold text-text"
           style={{ fontFamily: 'var(--font-heading), Georgia, serif' }}
         >
           Catálogo General
@@ -51,8 +51,8 @@ export default function DashboardPage() {
           href="/admin/tratamientos"
           loading={loading}
           icon={Sparkle}
-          iconBg="bg-violet-50"
-          iconColor="text-violet-500"
+          iconBg="bg-treatment-light"
+          iconColor="text-treatment"
         />
         <StatCard
           title="Productos activos"
@@ -61,8 +61,8 @@ export default function DashboardPage() {
           href="/admin/productos"
           loading={loading}
           icon={ShoppingBag}
-          iconBg="bg-sky-50"
-          iconColor="text-sky-500"
+          iconBg="bg-product-light"
+          iconColor="text-product"
         />
         <StatCard
           title="Categorías"

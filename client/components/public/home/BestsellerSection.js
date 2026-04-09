@@ -112,7 +112,7 @@ export default function BestsellerSection({ product }) {
           <div className="px-4 py-3.5 flex flex-col gap-1">
             {/* MARCA MÁS GRANDE */}
             <p
-              className="text-[10px] font-bold tracking-widest uppercase"
+              className="text-[11px] font-semibold tracking-widest uppercase"
               style={{ color: "var(--pub-text-muted)" }}
             >
               {product.brand || "Sbeltic"}
@@ -209,7 +209,7 @@ export default function BestsellerSection({ product }) {
         >
           {/* CATEGORÍA MÁS GRANDE */}
           <p
-            className="text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-2"
+            className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-2"
             style={{ color: "var(--pub-accent)" }}
           >
             Destacado

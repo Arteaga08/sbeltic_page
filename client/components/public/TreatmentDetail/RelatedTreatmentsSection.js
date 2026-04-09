@@ -1,6 +1,6 @@
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
-import TreatmentCard from "@/components/public/TratamientosPage/TreatmentCard";
+import TreatmentCard from "@/components/public/TreatmentsPage/TreatmentCard";
 
 export default function RelatedTreatmentsSection({ treatments }) {
   if (!treatments?.length) return null;

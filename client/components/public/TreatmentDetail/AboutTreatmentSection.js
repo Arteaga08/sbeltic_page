@@ -42,11 +42,10 @@ export default function AboutTreatmentSection({ treatment }) {
 
           {/* Eyebrow */}
           <p
-            className="font-semibold tracking-[0.35em] uppercase mb-3"
+            className="text-xs font-semibold tracking-[0.3em] uppercase mb-3"
             style={{
               color: "var(--pub-text)",
               opacity: 0.5,
-              fontSize: "clamp(0.65rem, 1vw, 0.75rem)",
             }}
           >
             Descubre el
@@ -67,12 +66,10 @@ export default function AboutTreatmentSection({ treatment }) {
 
           {/* Subtítulo */}
           <p
-            className="font-semibold uppercase mb-8"
+            className="text-xs font-semibold tracking-[0.3em] uppercase mb-8"
             style={{
               color: "var(--pub-text)",
               opacity: 0.5,
-              fontSize: "clamp(0.65rem, 1vw, 0.75rem)",
-              letterSpacing: "0.3em",
             }}
           >
             ¿En qué consiste el {treatment.name}?
@@ -111,11 +108,11 @@ export default function AboutTreatmentSection({ treatment }) {
               return (
                 <p
                   key={i}
-                  className={`leading-[1.85] tracking-wide text-justify ${i === 0 ? "font-light" : "font-extralight"}`}
+                  className="leading-[1.85] tracking-wide text-justify font-light"
                   style={{
                     color: "var(--pub-text)",
                     fontSize: "clamp(1rem, 1.15vw, 1.125rem)",
-                    opacity: i === 0 ? 0.9 : 0.75,
+                    opacity: 0.85,
                   }}
                 >
                   {block.text}

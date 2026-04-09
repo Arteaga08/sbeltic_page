@@ -17,7 +17,8 @@ export const buildQuery = (queryParams = {}, extraFilters = {}) => {
   else if (queryParams.active === 'all') delete filter.active;
 
   if (queryParams.search) {
-    filter.name = { $regex: queryParams.search, $options: 'i' };
+    const escaped = queryParams.search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    filter.name = { $regex: escaped, $options: 'i' };
   }
 
   return { filter, skip, limit, page };

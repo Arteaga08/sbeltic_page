@@ -103,6 +103,10 @@ productSchema.pre('findOneAndUpdate', function () {
   }
 });
 
+productSchema.index({ active: 1, category: 1 });
+productSchema.index({ active: 1, createdAt: -1 });
+productSchema.index({ active: 1, isFeatured: 1 });
+
 const Product = mongoose.model('Product', productSchema);
 
 export default Product;

@@ -39,6 +39,7 @@ export const createProductSchema = z.object({
   isPackage: z.boolean().optional(),
   packageItems: z.array(packageItemSchema).optional(),
   active: z.boolean().optional(),
+  isFeatured: z.boolean().optional(),
 });
 
 export const updateProductSchema = createProductSchema.partial();

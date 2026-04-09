@@ -9,7 +9,12 @@ import { buildQuery } from '../utils/apiFeatures.js';
 const getTreatments = async (req, res, next) => {
   try {
     const extraFilters = {};
-    if (req.query.category) extraFilters.category = req.query.category;
+    if (req.query.category) {
+      if (!mongoose.isValidObjectId(req.query.category)) {
+        return res.status(400).json({ success: false, message: 'ID de categoría no válido' });
+      }
+      extraFilters.category = req.query.category;
+    }
     if (req.query.featured === 'true') extraFilters.isFeatured = true;
 
     const { filter, skip, limit, page } = buildQuery(req.query, extraFilters);

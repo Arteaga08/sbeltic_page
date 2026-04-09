@@ -16,7 +16,7 @@ export default function DataTable({ columns, data, onEdit, onDelete, loading, fl
     return (
       <div className="text-center py-20">
         <div className="flex justify-center mb-4">
-          <div className="p-4 rounded-full bg-slate-50 border border-border">
+          <div className="p-4 rounded-full bg-bg border border-border">
             <Tray size={32} weight="thin" className="text-text-subtle" />
           </div>
         </div>

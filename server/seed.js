@@ -19,17 +19,23 @@ const seed = async () => {
       process.exit(0);
     }
 
+    const email = process.env.ADMIN_EMAIL;
+    const password = process.env.ADMIN_PASSWORD;
+
+    if (!email || !password) {
+      console.error('❌ Define ADMIN_EMAIL y ADMIN_PASSWORD en el archivo .env antes de correr seed.');
+      process.exit(1);
+    }
+
     // Crear el admin
     const admin = await AdminUser.create({
       name: 'Administrador',
-      email: 'admin@sbeltic.com',
-      password: 'Admin1234!',
+      email,
+      password,
     });
 
-    console.log('✅ Usuario admin creado:');
-    console.log('   Email:', admin.email);
-    console.log('   Contraseña: Admin1234!');
-    console.log('\n⚠️  Cambia la contraseña después del primer login.');
+    console.log('✅ Usuario admin creado:', admin.email);
+    console.log('⚠️  Cambia la contraseña después del primer login.');
 
     process.exit(0);
   } catch (error) {

@@ -135,7 +135,7 @@ export default function DividerBanner({
           {/* Botón CTA */}
           <Link
             href={buttonHref}
-            className="px-12 py-4 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-(--pub-accent-hover) hover:shadow-xl hover:-translate-y-1"
+            className="px-12 py-4 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-(--pub-accent-hover) hover:shadow-xl hover:-translate-y-1 active:scale-[0.97] active:shadow-none active:translate-y-0"
             style={{ background: "var(--pub-accent)", color: "#ffffff" }}
           >
             {buttonText}

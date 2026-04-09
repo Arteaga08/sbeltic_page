@@ -1,7 +1,7 @@
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
 
-export default function InstalacionesGallery() {
+export default function FacilitiesGallery() {
   return (
     <section
       className="w-full py-24 md:py-32"

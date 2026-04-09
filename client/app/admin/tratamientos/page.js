@@ -23,7 +23,7 @@ const COLUMNS = [
         <div className="flex items-center gap-2">
           <p className="font-medium text-text">{v}</p>
           {item.isFeatured && (
-            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-600 border border-amber-200">
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-semibold bg-featured-light text-featured border border-featured-border">
               <Star size={10} weight="fill" />
               Destacado
             </span>
@@ -39,7 +39,7 @@ const COLUMNS = [
     key: 'category',
     label: 'Categoría',
     render: (v) => v?.name
-      ? <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-violet-50 text-violet-600">{v.name}</span>
+      ? <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-treatment-light text-treatment">{v.name}</span>
       : <span className="text-text-subtle">—</span>,
   },
   { key: 'price', label: 'Precio', mono: true, render: (v) => v ? `$${v.toLocaleString('es-MX')}` : '—' },

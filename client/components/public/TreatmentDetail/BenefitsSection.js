@@ -6,7 +6,7 @@ function ChipGroup({ label, items, bgColor, textColor }) {
   return (
     <div className="mt-10 text-center">
       <p
-        className="text-xs font-bold tracking-[0.3em] uppercase mb-5"
+        className="text-xs font-semibold tracking-[0.3em] uppercase mb-5"
         style={{ color: "var(--pub-text-muted)" }}
       >
         {label}

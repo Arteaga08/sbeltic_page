@@ -45,6 +45,8 @@ categorySchema.pre('findOneAndUpdate', function () {
   }
 });
 
+categorySchema.index({ active: 1, type: 1 });
+
 const Category = mongoose.model('Category', categorySchema);
 
 export default Category;

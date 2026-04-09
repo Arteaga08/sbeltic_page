@@ -89,7 +89,7 @@ export default function ImageUploader({ entity, value, onChange, multiple = fals
 
       {/* Upload button */}
       {(multiple || allPreviews.length === 0) && (
-        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-dashed border-border text-sm text-text-muted cursor-pointer hover:border-primary hover:text-primary transition-colors w-fit">
+        <label className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-dashed border-border text-sm text-text-muted cursor-pointer hover:border-primary hover:text-primary focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-colors w-fit">
           {multiple ? '+ Añadir imágenes' : '+ Subir imagen'}
           <input
             type="file"

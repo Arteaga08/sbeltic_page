@@ -46,7 +46,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
             >
               Sbeltic
             </span>
-            <p className="text-[10px] mt-0.5 text-text-subtle font-semibold uppercase tracking-widest">
+            <p className="text-xs mt-0.5 text-text-subtle font-semibold uppercase tracking-widest">
               Admin
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
 
         {/* Navigation */}
         <nav className="flex-1 px-3 overflow-y-auto">
-          <p className="text-[10px] font-semibold text-text-subtle uppercase tracking-widest px-3 mb-2">
+          <p className="text-xs font-semibold text-text-subtle uppercase tracking-widest px-3 mb-2">
             Menú
           </p>
           {NAV.map(({ href, label, Icon }) => {
@@ -73,7 +73,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
                 key={href}
                 href={href}
                 onClick={onClose}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-md mb-0.5 text-[15px] font-medium transition-colors duration-150 ${
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-md mb-0.5 text-sm font-medium transition-colors duration-150 ${
                   isActive
                     ? 'bg-primary-light text-primary'
                     : 'text-text-muted hover:bg-bg hover:text-text'

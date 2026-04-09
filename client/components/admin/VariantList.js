@@ -56,7 +56,7 @@ export default function VariantList({ value = [], onChange }) {
           <button
             type="button"
             onClick={() => remove(i)}
-            className="text-text-muted hover:text-danger transition-colors text-lg leading-none"
+            className="text-text-muted hover:text-danger hover:bg-danger-light rounded p-1 transition-colors text-lg leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-danger/30"
           >
             ×
           </button>

@@ -9,10 +9,25 @@ import { buildQuery } from '../utils/apiFeatures.js';
 const getProducts = async (req, res, next) => {
   try {
     const extraFilters = {};
-    if (req.query.category) extraFilters.category = req.query.category;
+    if (req.query.category) {
+      if (!mongoose.isValidObjectId(req.query.category)) {
+        return res.status(400).json({ success: false, message: 'ID de categoría no válido' });
+      }
+      extraFilters.category = req.query.category;
+    }
     if (req.query.isPackage !== undefined) extraFilters.isPackage = req.query.isPackage === 'true';
-    if (req.query.skinType) extraFilters.skinTypes = req.query.skinType;
-    if (req.query.skinConcern) extraFilters.skinConcerns = req.query.skinConcern;
+    if (req.query.skinType) {
+      if (!mongoose.isValidObjectId(req.query.skinType)) {
+        return res.status(400).json({ success: false, message: 'ID de tipo de piel no válido' });
+      }
+      extraFilters.skinTypes = req.query.skinType;
+    }
+    if (req.query.skinConcern) {
+      if (!mongoose.isValidObjectId(req.query.skinConcern)) {
+        return res.status(400).json({ success: false, message: 'ID de condición no válido' });
+      }
+      extraFilters.skinConcerns = req.query.skinConcern;
+    }
 
     const { filter, skip, limit, page } = buildQuery(req.query, extraFilters);
     const [products, total] = await Promise.all([

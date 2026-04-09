@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import { BASE_URL } from "../ProductosPage/constants";
+import { BASE_URL } from "../ProductsPage/constants";
 
 export default function ProductGallery({ product }) {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -35,7 +35,7 @@ export default function ProductGallery({ product }) {
         {/* ── BADGE DE DESCUENTO ── */}
         {hasDiscount && (
           <div
-            className="absolute top-4 right-4 z-10 text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-full uppercase shadow-md"
+            className="absolute top-4 right-4 z-10 text-white text-[11px] font-semibold tracking-widest px-3 py-1.5 rounded-full uppercase shadow-md"
             style={{ backgroundColor: "var(--pub-text)" }} // Usamos el color oscuro para un contraste elegante
           >
             -{discountPercentage}% OFF

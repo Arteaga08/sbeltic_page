@@ -32,7 +32,7 @@ export default function MobileFilterPanel({ isOpen, onClose, children }) {
           </h2>
           <button
             onClick={onClose}
-            className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer transition-all duration-200 hover:bg-black/6 active:bg-black/12 active:scale-[0.92]"
+            className="w-11 h-11 flex items-center justify-center rounded-full cursor-pointer transition-all duration-200 hover:bg-black/6 active:bg-black/12 active:scale-[0.92]"
             style={{ color: "var(--pub-text)" }}
             aria-label="Cerrar filtros"
           >

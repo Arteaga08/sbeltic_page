@@ -31,7 +31,7 @@ const COLUMNS = [
     key: 'category',
     label: 'Categoría',
     render: (v) => v?.name
-      ? <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-600">{v.name}</span>
+      ? <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-product-light text-product">{v.name}</span>
       : <span className="text-text-subtle">—</span>,
   },
   { key: 'price', label: 'Precio', mono: true, render: (v) => v ? `$${v.toLocaleString('es-MX')}` : '—' },

@@ -1,25 +1,25 @@
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
 
-const VALORES = [
+const VALUES = [
   {
     numeral: "I",
-    titulo: "Excelencia",
-    descripcion: "Utilizamos tecnología de vanguardia y protocolos de alta precisión para garantizar resultados reales y duraderos.",
+    title: "Excelencia",
+    description: "Utilizamos tecnología de vanguardia y protocolos de alta precisión para garantizar resultados reales y duraderos.",
   },
   {
     numeral: "II",
-    titulo: "Confianza",
-    descripcion: "Cada tratamiento comienza con una valoración honesta. Tu bienestar y seguridad son nuestra prioridad.",
+    title: "Confianza",
+    description: "Cada tratamiento comienza con una valoración honesta. Tu bienestar y seguridad son nuestra prioridad.",
   },
   {
     numeral: "III",
-    titulo: "Personalización",
-    descripcion: "No existen dos pieles iguales. Diseñamos cada plan a la medida de tus objetivos y características únicas.",
+    title: "Personalización",
+    description: "No existen dos pieles iguales. Diseñamos cada plan a la medida de tus objetivos y características únicas.",
   },
 ];
 
-export default function ValoresSection() {
+export default function ValuesSection() {
   return (
     <section
       className="w-full py-24 md:py-32"
@@ -50,7 +50,7 @@ export default function ValoresSection() {
           className="grid grid-cols-1 sm:grid-cols-3 border-t border-b"
           style={{ borderColor: "var(--pub-gold-light)" }}
         >
-          {VALORES.map((v, i) => (
+          {VALUES.map((v, i) => (
             <div
               key={v.numeral}
               className="flex flex-col items-center text-center px-8 md:px-12 py-12 md:py-16 border-b sm:border-b-0 sm:border-l last:border-b-0 first:border-l-0"
@@ -75,13 +75,13 @@ export default function ValoresSection() {
                   color: "var(--pub-text)",
                 }}
               >
-                {v.titulo}
+                {v.title}
               </h3>
               <p
                 className="font-light leading-relaxed text-sm"
                 style={{ color: "var(--pub-text-muted)" }}
               >
-                {v.descripcion}
+                {v.description}
               </p>
             </div>
           ))}

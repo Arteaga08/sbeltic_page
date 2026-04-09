@@ -29,12 +29,16 @@ const deleteImage = (req, res) => {
     return res.status(400).json({ success: false, message: 'URL de imagen requerida' });
   }
 
-  // Evitar path traversal: solo permitir rutas dentro de /uploads/
   if (!url.startsWith('/uploads/')) {
     return res.status(400).json({ success: false, message: 'URL no válida' });
   }
 
-  const filePath = path.join(__dirname, '..', url);
+  const uploadsDir = path.resolve(__dirname, '..', 'uploads');
+  const filePath = path.resolve(__dirname, '..', url);
+
+  if (!filePath.startsWith(uploadsDir + path.sep)) {
+    return res.status(400).json({ success: false, message: 'URL no válida' });
+  }
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({ success: false, message: 'Imagen no encontrada' });

@@ -4,7 +4,7 @@ import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
 import BookingBanner from "@/components/public/home/shared/BookingBanner";
 
-export default function AntesYDespuesPage({ categories, treatments }) {
+export default function BeforeAfterPage({ categories, treatments }) {
   // Agrupar tratamientos por categoría
   const treatmentsByCategory = {};
   treatments.forEach((t) => {
@@ -29,25 +29,7 @@ export default function AntesYDespuesPage({ categories, treatments }) {
       >
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           {/* Encabezado de sección */}
-          <div className="text-center mb-14">
-            <SectionEyebrow variant="gold" className="mb-5">
-              Resultados reales
-            </SectionEyebrow>
-            <h2
-              className="font-bold uppercase leading-tight mb-6"
-              style={{
-                fontFamily: "var(--font-heading)",
-                color: "var(--pub-text)",
-                // CAMBIO CLAVE: Subimos el mínimo de 1.8rem a 2.5rem
-                fontSize: "clamp(2.5rem, 6vw, 3.5rem)",
-              }}
-            >
-              <span style={{ color: "var(--pub-accent)" }}>Nuestros</span>
-              <br />
-              Tratamientos
-            </h2>
-            <GoldDivider size="sm" />
-          </div>
+         
 
           {/* Estado vacío */}
           {activeCategories.length === 0 && (

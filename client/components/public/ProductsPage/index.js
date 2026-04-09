@@ -16,7 +16,7 @@ import Pagination from "./Pagination";
 
 const PRODUCTS_PER_PAGE = 20;
 
-export default function ProductosPage({
+export default function ProductsPage({
   initialProducts = [],
   categories = [],
 }) {

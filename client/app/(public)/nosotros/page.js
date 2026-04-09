@@ -1,6 +1,4 @@
-// TODO: Página Sobre Nosotros
-// Contenido estático — sin fetch de API
-import NosotrosPage from "@/components/public/NosotrosPage";
+import AboutUsPage from "@/components/public/AboutUsPage";
 
 export const metadata = {
   title: "Nosotros — Sbeltic",
@@ -8,5 +6,5 @@ export const metadata = {
 };
 
 export default function NosotrosRoute() {
-  return <NosotrosPage />;
+  return <AboutUsPage />;
 }

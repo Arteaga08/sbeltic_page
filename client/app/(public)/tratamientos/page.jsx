@@ -1,5 +1,5 @@
 import { publicTreatments, publicCategories } from '@/lib/api-public'
-import TratamientosPage from '@/components/public/TratamientosPage'
+import TreatmentsPage from '@/components/public/TreatmentsPage'
 import { Suspense } from 'react'
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default async function TratamientosRoute() {
 
   return (
     <Suspense>
-      <TratamientosPage initialTreatments={treatments} categories={categories} />
+      <TreatmentsPage initialTreatments={treatments} categories={categories} />
     </Suspense>
   )
 }

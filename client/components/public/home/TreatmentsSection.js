@@ -44,7 +44,7 @@ function CategoryCard({ category }) {
           className="absolute bottom-8 md:bottom-12 inset-x-0 px-2 py-3 md:py-3.5 backdrop-blur-md transition-colors duration-300"
           style={{ background: "var(--pub-overlay-dark)" }}
         >
-          <p className="text-white text-[9px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-center leading-tight">
+          <p className="text-white text-[11px] md:text-xs font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-center leading-tight">
             {category.name}
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function TreatmentsSection({ categories = [] }) {
 
         {/* Tarjetas */}
         {categories.length > 0 ? (
-          <div className="flex gap-3 md:gap-7 overflow-x-auto pb-6 md:justify-center snap-x snap-mandatory scrollbar-hide">
+          <div className="flex gap-4 md:gap-6 overflow-x-auto pb-6 md:justify-center snap-x snap-mandatory scrollbar-hide">
             {categories.map((cat) => (
               <div key={cat._id} className="snap-start pt-2">
                 <CategoryCard category={cat} />

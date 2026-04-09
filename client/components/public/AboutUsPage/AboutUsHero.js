@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
 
-export default function NosotrosHero() {
+export default function AboutUsHero() {
   return (
     <section className="relative w-full h-[40vh] md:h-[55vh] overflow-hidden">
       <Image

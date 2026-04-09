@@ -30,7 +30,7 @@ export default function HeroSection({ treatment }) {
 
         {/* ── Columna izquierda: panel turquesa ─────────────────────── */}
         <div
-          className="order-2 lg:order-1 relative flex flex-col justify-center items-center lg:items-start px-6 py-10 pt-24 md:px-12 md:pt-28 lg:px-20 lg:py-20 lg:pt-32 xl:px-28 xl:py-24 xl:pt-36 overflow-hidden"
+          className="order-2 lg:order-1 relative flex flex-col justify-center items-center lg:items-start px-6 pt-24 pb-10 md:px-12 md:pt-28 md:pb-12 lg:px-20 lg:pt-32 lg:pb-20 xl:px-28 xl:pt-36 xl:pb-24 overflow-hidden"
           style={{ backgroundColor: "var(--pub-accent)" }}
         >
 
@@ -75,10 +75,8 @@ export default function HeroSection({ treatment }) {
             {/* Categoría — eyebrow */}
             {treatment.category?.name && (
               <p
-                className="mb-5 md:mb-6 font-semibold uppercase"
+                className="mb-5 md:mb-6 text-xs font-semibold tracking-[0.3em] uppercase"
                 style={{
-                  fontSize: "12px",
-                  letterSpacing: "0.3em",
                   color: "var(--pub-text)",
                   opacity: 0.9,
                 }}
@@ -123,8 +121,8 @@ export default function HeroSection({ treatment }) {
                 <span
                   className="font-semibold uppercase"
                   style={{
-                    fontSize: "10px",
-                    letterSpacing: "0.2em",
+                    fontSize: "11px",
+                    letterSpacing: "0.18em",
                     color: "var(--pub-text)",
                     opacity: 0.7,
                   }}
@@ -169,8 +167,8 @@ export default function HeroSection({ treatment }) {
                 <span
                   className="font-semibold uppercase"
                   style={{
-                    fontSize: "10px",
-                    letterSpacing: "0.2em",
+                    fontSize: "11px",
+                    letterSpacing: "0.18em",
                     color: "var(--pub-text)",
                     opacity: 0.7,
                   }}
@@ -195,7 +193,7 @@ export default function HeroSection({ treatment }) {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center w-fit px-5 py-3 md:px-6 md:py-4 rounded-full transition-all duration-200 cursor-pointer hover:bg-[#2C2420] hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none active:translate-y-0"
+              className="group flex items-center justify-center w-fit px-5 py-3 md:px-6 md:py-4 rounded-full transition-all duration-200 cursor-pointer hover:opacity-85 hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97] active:shadow-none active:translate-y-0"
               style={{
                 backgroundColor: "var(--pub-text)",
                 color: "#ffffff",

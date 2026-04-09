@@ -7,7 +7,7 @@ import InfiniteCarousel from "../home/shared/InfiniteCarousel";
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 const WA_NUMBER = "5215512345678"; // TODO: reemplazar con número real
 
-export default function AntesYDespuesDetail({ treatment }) {
+export default function BeforeAfterDetail({ treatment }) {
   const pairs = treatment.beforeImages
     .map((img, i) => ({
       before: `${BASE_URL}${img}`,
@@ -163,7 +163,7 @@ function Stat({ label, value }) {
   return (
     <div className="flex flex-col gap-1">
       <span
-        className="text-[10px] font-semibold uppercase tracking-[0.2em]"
+        className="text-[11px] font-semibold uppercase tracking-[0.2em]"
         style={{ color: "var(--pub-text)", opacity: 0.6 }}
       >
         {label}

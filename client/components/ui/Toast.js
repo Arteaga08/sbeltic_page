@@ -14,8 +14,8 @@ export default function Toast({ toasts }) {
       {toasts.map((t) => (
         <div
           key={t.id}
-          className="flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-lg shadow-lg text-sm font-medium max-w-sm pointer-events-auto"
-          style={{ animation: 'toastIn 0.2s ease-out' }}
+          className="flex items-center gap-3 text-white px-4 py-3 rounded-lg shadow-lg text-sm font-medium max-w-sm pointer-events-auto"
+          style={{ background: 'var(--sidebar-bg)', animation: 'toastIn 0.2s ease-out' }}
         >
           {ICONS[t.type] ?? ICONS.info}
           <span>{t.message}</span>

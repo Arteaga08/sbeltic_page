@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { publicTreatments } from "@/lib/api-public";
-import AntesYDespuesDetail from "@/components/public/AntesYDespuesDetail";
+import BeforeAfterDetail from "@/components/public/BeforeAfterDetail";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
@@ -41,5 +41,5 @@ export default async function AntesYDespuesSlugPage({ params }) {
     notFound();
   }
 
-  return <AntesYDespuesDetail treatment={treatment} />;
+  return <BeforeAfterDetail treatment={treatment} />;
 }

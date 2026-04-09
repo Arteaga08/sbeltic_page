@@ -66,7 +66,7 @@ function NavCard({ href, icon: Icon, title, description, count, countLabel }) {
       </div>
 
       <div className="mt-4 pt-4 border-t border-border">
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-text-muted border border-border">
+        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bg text-text-muted border border-border">
           {count} {countLabel}
         </span>
       </div>

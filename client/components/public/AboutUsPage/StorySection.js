@@ -1,7 +1,7 @@
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
 
-export default function HistoriaSection() {
+export default function StorySection() {
   return (
     <section
       className="w-full py-24 md:py-32"
@@ -35,10 +35,7 @@ export default function HistoriaSection() {
               }}
             >
               {/* TODO: Reemplazar con texto real de la clínica */}
-              En Sbeltic creemos que cada persona merece sentirse segura y
-              radiante en su propia piel. Desde nuestros inicios, hemos
-              combinado tecnología de vanguardia con atención personalizada para
-              ofrecer tratamientos estéticos de primer nivel.
+              En Sbeltic creemos que cada persona merece sentirse segura y radiante en su propia piel. Desde nuestros inicios, hemos combinado tecnología de vanguardia con atención personalizada para ofrecer tratamientos estéticos de primer nivel.
             </p>
             <p
               className="font-light leading-relaxed"
@@ -47,9 +44,7 @@ export default function HistoriaSection() {
                 fontSize: "clamp(1rem, 1.2vw, 1.125rem)",
               }}
             >
-              Nuestras instalaciones fueron diseñadas pensando en tu comodidad y
-              privacidad, creando un ambiente de bienestar desde el momento en
-              que cruzas la puerta.
+              Nuestras instalaciones fueron diseñadas pensando en tu comodidad y privacidad, creando un ambiente de bienestar desde el momento en que cruzas la puerta.
             </p>
           </div>
 

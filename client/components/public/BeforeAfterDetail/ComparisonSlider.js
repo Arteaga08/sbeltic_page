@@ -136,7 +136,7 @@ export default function ComparisonSlider({ pairs, treatmentName }) {
 
         {/* ANTES label */}
         <span
-          className="absolute bottom-5 left-5 z-10 text-[11px] font-bold uppercase tracking-[0.25em]"
+          className="absolute bottom-5 left-5 z-10 text-[11px] font-semibold uppercase tracking-[0.3em]"
           style={{ color: "white", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
         >
           Antes
@@ -158,8 +158,8 @@ export default function ComparisonSlider({ pairs, treatmentName }) {
             onClick={() => goTo(-1)}
             className="flex items-center justify-center rounded-full transition-opacity hover:opacity-70"
             style={{
-              width: "40px",
-              height: "40px",
+              width: "44px",
+              height: "44px",
               background: "#1A1614",
               color: "white",
             }}
@@ -187,8 +187,8 @@ export default function ComparisonSlider({ pairs, treatmentName }) {
             onClick={() => goTo(1)}
             className="flex items-center justify-center rounded-full transition-opacity hover:opacity-70"
             style={{
-              width: "40px",
-              height: "40px",
+              width: "44px",
+              height: "44px",
               background: "#1A1614",
               color: "white",
             }}

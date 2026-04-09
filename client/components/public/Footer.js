@@ -6,6 +6,7 @@ import {
   Phone,
   EnvelopeSimple,
   ArrowRight,
+  Lock,
 } from "@phosphor-icons/react/dist/ssr";
 
 const TRATAMIENTOS = [
@@ -47,8 +48,7 @@ export default function Footer() {
                 Sbeltic
               </span>
               <p
-                className="text-sm leading-snug font-light max-w-sm"
-                style={{ color: "#9e9a94" }}
+                className="text-sm leading-snug font-light max-w-sm text-white/60"
               >
                 Clínica estética profesional. Elevando tu bienestar con
                 tratamientos de la más alta calidad.
@@ -61,7 +61,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="text-[#9e9a94] hover:text-white transition-all hover:scale-110"
+                  className="text-white/60 hover:text-white transition-all hover:scale-110 active:scale-[0.92]"
                 >
                   <InstagramLogo size={20} weight="regular" />
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="text-[#9e9a94] hover:text-white transition-all hover:scale-110"
+                  className="text-white/60 hover:text-white transition-all hover:scale-110 active:scale-[0.92]"
                 >
                   <FacebookLogo size={20} weight="regular" />
                 </a>
@@ -79,7 +79,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok"
-                  className="text-[#9e9a94] hover:text-white transition-all hover:scale-110"
+                  className="text-white/60 hover:text-white transition-all hover:scale-110 active:scale-[0.92]"
                 >
                   <TiktokLogo size={20} weight="regular" />
                 </a>
@@ -91,16 +91,16 @@ export default function Footer() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-white">
                 Únete a nuestra lista
               </p>
-              <form className="flex items-center border-b border-[#2a2a2a] pb-1 transition-colors focus-within:border-white">
+              <form className="flex items-center border-b border-white/10 pb-1 transition-colors focus-within:border-white">
                 <input
                   type="email"
                   placeholder="Tu correo electrónico"
-                  className="bg-transparent border-none outline-none text-sm w-full placeholder:text-[#6b6760] text-white py-1"
+                  className="bg-transparent border-none outline-none text-sm w-full placeholder:text-white/35 text-white py-1"
                 />
                 <button
                   type="button"
                   aria-label="Suscribirse"
-                  className="text-[#9e9a94] hover:text-white transition-all duration-200 px-1 hover:scale-110 active:scale-[0.92]"
+                  className="text-white/60 hover:text-white transition-all duration-200 px-1 hover:scale-110 active:scale-[0.92]"
                 >
                   <ArrowRight size={18} weight="light" />
                 </button>
@@ -112,7 +112,7 @@ export default function Footer() {
           <div className="lg:w-8/12 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 lg:ml-auto w-full">
             {/* Columna Tratamientos */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-white">
+              <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-white">
                 Tratamientos
               </h3>
               <ul className="flex flex-col gap-2.5">
@@ -120,8 +120,7 @@ export default function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light transition-all hover:text-white hover:translate-x-1"
-                      style={{ color: "#9e9a94" }}
+                      className="text-sm font-light text-white/60 transition-all hover:text-white hover:translate-x-1 active:opacity-60"
                     >
                       {item.label}
                     </Link>
@@ -132,7 +131,7 @@ export default function Footer() {
 
             {/* Columna Productos */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-white">
+              <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-white">
                 Productos
               </h3>
               <ul className="flex flex-col gap-2.5">
@@ -140,8 +139,7 @@ export default function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light transition-all hover:text-white hover:translate-x-1"
-                      style={{ color: "#9e9a94" }}
+                      className="text-sm font-light text-white/60 transition-all hover:text-white hover:translate-x-1 active:opacity-60"
                     >
                       {item.label}
                     </Link>
@@ -152,7 +150,7 @@ export default function Footer() {
 
             {/* Columna Contacto (Ocupa 2 columnas en móvil para no amontonarse, pero sin altura excesiva) */}
             <div className="col-span-2 md:col-span-1 flex flex-col gap-3 md:gap-4">
-              <h3 className="text-[11px] font-bold tracking-[0.2em] uppercase text-white">
+              <h3 className="text-xs font-semibold tracking-[0.2em] uppercase text-white">
                 Contacto
               </h3>
               <ul className="flex flex-col gap-2.5">
@@ -160,8 +158,7 @@ export default function Footer() {
                   {/* Iconos sin fondo para ahorrar espacio vertical */}
                   <a
                     href="tel:+526180000000"
-                    className="flex items-center gap-2 text-sm font-light transition-colors hover:text-white"
-                    style={{ color: "#9e9a94" }}
+                    className="flex items-center gap-2 text-sm font-light text-white/60 transition-colors hover:text-white active:opacity-60"
                   >
                     <Phone size={15} weight="fill" />
                     (618) 000-0000
@@ -170,8 +167,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="mailto:hola@sbeltic.com"
-                    className="flex items-center gap-2 text-sm font-light transition-colors hover:text-white mb-1"
-                    style={{ color: "#9e9a94" }}
+                    className="flex items-center gap-2 text-sm font-light text-white/60 transition-colors hover:text-white active:opacity-60 mb-1"
                   >
                     <EnvelopeSimple size={15} weight="fill" />
                     hola@sbeltic.com
@@ -181,8 +177,7 @@ export default function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm font-light transition-all hover:text-white hover:translate-x-1"
-                      style={{ color: "#9e9a94" }}
+                      className="text-sm font-light text-white/60 transition-all hover:text-white hover:translate-x-1 active:opacity-60"
                     >
                       {item.label}
                     </Link>
@@ -190,15 +185,24 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            {/* Acceso admin — discreto */}
+            <Link
+              href="/admin/login"
+              aria-label="Acceso administrador"
+              className="mt-1 w-fit text-white/15 hover:text-white/40 transition-colors duration-300"
+            >
+              <Lock size={13} weight="light" />
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar: Ultra compacta, 2 líneas en móvil */}
-      <div className="border-t border-[#2a2a2a]">
+      <div className="border-t border-white/10">
         <div
-          className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] font-light tracking-wide text-center"
-          style={{ color: "#6b6760" }}
+          className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:text-xs font-light tracking-wide text-center"
+          style={{ color: "rgba(255,255,255,0.4)" }}
         >
           {/* Enlaces legales */}
           <div className="flex items-center justify-center gap-5 md:order-2">

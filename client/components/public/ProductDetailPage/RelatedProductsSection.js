@@ -1,6 +1,6 @@
 import SectionEyebrow from "@/components/public/home/shared/SectionEyebrow";
 import GoldDivider from "@/components/public/home/shared/GoldDivider";
-import ProductCard from "@/components/public/ProductosPage/ProductCard";
+import ProductCard from "@/components/public/ProductsPage/ProductCard";
 
 export default function RelatedProductsSection({ products }) {
   // Aseguramos mostrar máximo 3 productos para no alargar la página

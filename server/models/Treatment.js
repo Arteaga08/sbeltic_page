@@ -115,6 +115,10 @@ treatmentSchema.pre('findOneAndUpdate', function () {
   }
 });
 
+treatmentSchema.index({ active: 1, category: 1 });
+treatmentSchema.index({ active: 1, createdAt: -1 });
+treatmentSchema.index({ active: 1, isFeatured: 1 });
+
 const Treatment = mongoose.model('Treatment', treatmentSchema);
 
 export default Treatment;

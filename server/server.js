@@ -1,10 +1,29 @@
 import 'dotenv/config';
+
+// Validar variables de entorno requeridas antes de iniciar
+const REQUIRED_ENV = ['MONGODB_URI', 'JWT_SECRET', 'NODE_ENV'];
+for (const key of REQUIRED_ENV) {
+  if (!process.env[key]) {
+    console.error(`❌ Variable de entorno requerida no definida: ${key}`);
+    process.exit(1);
+  }
+}
+if (process.env.NODE_ENV === 'production') {
+  if (!process.env.CLIENT_URL) {
+    console.error('❌ CLIENT_URL debe estar definida en producción');
+    process.exit(1);
+  }
+  if (process.env.JWT_SECRET.length < 32) {
+    console.error('❌ JWT_SECRET debe tener al menos 32 caracteres en producción');
+    process.exit(1);
+  }
+}
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
-import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
 import { rateLimit } from 'express-rate-limit';
 import path from 'path';
@@ -50,9 +69,8 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // Parsers
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 app.use(compression());
 
 // Logging en desarrollo

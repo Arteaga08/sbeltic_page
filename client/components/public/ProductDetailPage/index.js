@@ -34,7 +34,7 @@ export default function ProductDetail({ product, relatedProducts }) {
               </div>
 
               {/* Aumentamos texto de la marca */}
-              <p className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-black/40 mb-3">
+              <p className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-black/40 mb-3">
                 {product.brand || "Sbeltic Skincare"}
               </p>
 

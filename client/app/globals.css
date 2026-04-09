@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand — PLACEHOLDER, reemplazar cuando el cliente defina paleta */
-  --color-primary: #1e3a5f;
-  --color-primary-hover: #152c47;
-  --color-primary-light: #edf1f7;
+  /* Brand — Alineado con identidad Sbeltic */
+  --color-primary: #3DBDB5;
+  --color-primary-hover: #2EA09A;
+  --color-primary-light: #E8F7F6;
 
-  --color-accent: #7c3aed;
+  --color-accent: #B8924A;
 
-  /* Neutrals */
-  --color-bg: #f8fafc;
+  /* Neutrals — cálidos */
+  --color-bg: #FAF8F5;
   --color-surface: #ffffff;
-  --color-border: #e2e8f0;
-  --color-border-focus: #1e3a5f;
+  --color-border: #E6D8C8;
+  --color-border-focus: #3DBDB5;
 
-  /* Text */
-  --color-text: #0f172a;
-  --color-text-muted: #64748b;
-  --color-text-subtle: #94a3b8;
+  /* Text — cálidos */
+  --color-text: #1A1614;
+  --color-text-muted: #6B5E55;
+  --color-text-subtle: #9C8E82;
   --color-text-inverse: #ffffff;
 
   /* Semantic */
@@ -29,11 +29,22 @@
   --color-warning: #d97706;
   --color-warning-light: #fffbeb;
 
-  /* Admin sidebar */
-  --sidebar-bg: #0f172a;
-  --sidebar-text: #94a3b8;
+  /* Entity colors */
+  --color-treatment: #3DBDB5;
+  --color-treatment-light: #E8F7F6;
+  --color-product: #B8924A;
+  --color-product-light: #F2E6D0;
+  --color-featured: #D4940A;
+  --color-featured-light: #FEF7E6;
+  --color-featured-border: #E8C66A;
+  --color-inactive: #D6CCC2;
+  --color-inactive-light: #F5F0EB;
+
+  /* Admin sidebar — dark warm */
+  --sidebar-bg: #1E3332;
+  --sidebar-text: #9CABA9;
   --sidebar-text-active: #ffffff;
-  --sidebar-accent: #3b82f6;
+  --sidebar-accent: #3DBDB5;
   --sidebar-width: 260px;
 
   /* Layout */
@@ -91,6 +102,15 @@
   --color-warning: var(--color-warning);
   --color-warning-light: var(--color-warning-light);
   --color-sidebar: var(--sidebar-bg);
+  --color-treatment: var(--color-treatment);
+  --color-treatment-light: var(--color-treatment-light);
+  --color-product: var(--color-product);
+  --color-product-light: var(--color-product-light);
+  --color-featured: var(--color-featured);
+  --color-featured-light: var(--color-featured-light);
+  --color-featured-border: var(--color-featured-border);
+  --color-inactive: var(--color-inactive);
+  --color-inactive-light: var(--color-inactive-light);
 }
 
 * {
@@ -114,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Accesibilidad: anillo de foco para navegación por teclado */
 :focus-visible {
-  outline: 2px solid var(--pub-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }

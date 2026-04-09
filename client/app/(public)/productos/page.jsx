@@ -1,5 +1,5 @@
 import { publicProducts, publicCategories } from '@/lib/api-public'
-import ProductosPage from '@/components/public/ProductosPage'
+import ProductsPage from '@/components/public/ProductsPage'
 
 export const metadata = {
   title: 'Productos — Sbeltic',
@@ -16,5 +16,5 @@ export default async function ProductosRoute() {
   const categories = categoriesRes.data ?? []
   const products = productsRes.data ?? []
 
-  return <ProductosPage initialProducts={products} categories={categories} />
+  return <ProductsPage initialProducts={products} categories={categories} />
 }

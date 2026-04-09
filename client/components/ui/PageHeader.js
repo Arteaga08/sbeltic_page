@@ -17,7 +17,7 @@ function ActionButton({ action }) {
 
 export default function PageHeader({ title, subtitle, action, secondaryAction, eyebrow, icon: Icon, badge, backHref }) {
   return (
-    <div className="bg-surface border border-border rounded-xl shadow-(--shadow-sm) px-6 py-5 mb-7">
+    <div className="bg-surface border border-border rounded-xl shadow-(--shadow-sm) px-6 py-5 mb-6">
       {backHref && (
         <Link href={backHref} className="inline-flex items-center gap-1.5 text-xs text-text-subtle hover:text-primary transition-colors duration-150 mb-4">
           <ArrowLeft size={13} weight="bold" />
@@ -33,14 +33,14 @@ export default function PageHeader({ title, subtitle, action, secondaryAction, e
           )}
           <div>
             {eyebrow && (
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-text-subtle mb-1">
+              <p className="text-xs font-semibold uppercase tracking-widest text-text-subtle mb-1">
                 {eyebrow}
               </p>
             )}
             <div className="flex items-center gap-2.5 flex-wrap">
-              <h1 className="text-2xl font-bold text-text md:text-3xl">{title}</h1>
+              <h1 className="text-2xl font-semibold text-text">{title}</h1>
               {badge && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-text-muted border border-border">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bg text-text-muted border border-border">
                   {badge}
                 </span>
               )}
